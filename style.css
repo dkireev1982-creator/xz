@@ -1,0 +1,1331 @@
+*{
+  font-family: "Montserrat", serif;
+}
+body {
+  overflow-x: hidden;
+ 
+  font-family: "Montserrat", serif;
+  color: #d9d9d9;
+  font-size: 20px;
+  line-height: 163%;
+  letter-spacing: -0.02em;
+  background-color: #404040;
+}
+
+
+
+.first-section {
+  width: 100%;
+  max-width: 115.1875rem; /* как в примере */
+  margin: 0 auto;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+}
+
+.first-section header {
+  width: 100%;
+  height: 6.375rem;
+  display: flex;
+  margin: 0.75rem 0;
+  padding: 1.5rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0 1.25rem rgba(59, 59, 59, 0.06);
+  box-sizing: border-box;
+}
+
+.first-section header nav {
+  display: flex;
+  gap: 2.9375rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.first-section header nav a {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  color: #030712;
+  position: relative;
+  white-space: nowrap;
+}
+
+.first-section header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.first-section header nav a:hover::after {
+  width: 100%;
+}
+
+.first-section header .application {
+  display: flex;
+  align-items: center;
+}
+
+.first-section header .application button {
+  width: 16.9375rem;
+  height: 4.5rem;
+  border-radius: 1.5625rem;
+  border: none;
+  background-color: #7C3AED;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0.625rem rgba(59, 59, 59, 0.29);
+  cursor: pointer;
+}
+
+.first-section header .application button:hover {
+  background-color: #8C4FF4;
+}
+
+.first-section header .application button:active {
+  transform: scale(0.98);
+}
+
+/* Адаптивность как в примере - постепенное уменьшение */
+@media (max-width: 1200px) {
+  .first-section header nav {
+    gap: 2rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 1.1rem;
+  }
+  
+  .first-section header .application button {
+    width: 14rem;
+    height: 4rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .first-section header {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .first-section header nav {
+    gap: 1.5rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 1rem;
+  }
+  
+  .first-section header .application button {
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .first-section header {
+    height: auto;
+    min-height: 5rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .first-section header nav {
+    gap: 1.2rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 0.9rem;
+  }
+  
+  .first-section header .application button {
+    width: 10rem;
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .first-section header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .first-section header nav {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 0.85rem;
+  }
+  
+  .first-section header .application {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .first-section header .application button {
+    width: 14rem;
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .first-section {
+    padding: 0 0.5rem;
+  }
+  
+  .first-section header {
+    padding: 0.8rem 1rem;
+    border-radius: 1.5rem;
+  }
+  
+  .first-section header nav {
+    gap: 0.8rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 0.75rem;
+  }
+  
+  .first-section header .application button {
+    width: 12rem;
+    height: 2.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .first-section header nav {
+    gap: 0.6rem;
+  }
+  
+  .first-section header nav a {
+    font-size: 0.7rem;
+  }
+  
+  .first-section header .application button {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+
+  /*БЛОК 1*/
+ 
+   @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background: #8C4FF4;
+            }
+            50% {
+                background: #7C3AED;
+            }
+            100% {
+                background: #8C4FF4;
+            }
+        }
+
+        @keyframes containerSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1) translateY(0);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1) translateY(-5px);
+            }
+        }
+
+        @keyframes glowMove {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, -10px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, -15px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-10px, -5px) rotate(270deg);
+            }
+        }
+
+        @keyframes glowOrbit {
+            0% {
+                transform: rotate(0deg) translateX(60px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(60px) rotate(-360deg);
+            }
+        }
+
+        @keyframes glowFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+            33% {
+                transform: translateY(-20px) scale(1.1);
+                opacity: 0.7;
+            }
+            66% {
+                transform: translateY(10px) scale(0.9);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(200%) rotate(45deg);
+            }
+        }
+
+        
+        .hero {
+            padding-bottom: 6.25rem;
+            position: relative;
+            width: 100%;
+            max-width: 115.1875rem;
+            margin: 0 auto;
+            padding: 0 0.625rem;
+            box-sizing: border-box;
+            margin-top: -1rem;
+        }
+
+        .herocontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            animation: containerSlide 0.6s ease-out 0.1s both;
+        }
+
+        .hero--info {
+            width: 100%;
+            background: #fff;
+            border-radius: 2rem;
+            padding: 1.5rem 5rem;
+            box-shadow: 0 0 1.25rem rgba(59, 59, 59, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 420px;
+            margin: -0.5rem 0.5rem;
+            box-sizing: border-box;
+            opacity: 0;
+            animation: scaleIn 0.8s ease-out 0.3s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero--content {
+            width: 55%;
+            padding-right: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero--info h2 {
+            color: #0019FF;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        .hero--info h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            margin-top: -0.5rem;
+            max-width: 90%;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.7s both;
+        }
+
+        .hero--info p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.9s both;
+        }
+
+        .btn {
+            background: #8C4FF4;
+            color: #fff;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 1.1s both;
+            z-index: 2;
+        }
+
+        .btn:hover {
+            background: #7C3AED;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .hero--image {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero--info img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 1rem;
+            opacity: 0;
+            animation: 
+                fadeInRight 0.8s ease-out 0.7s both,
+                float 3s ease-in-out 1.5s infinite;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero--info img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Новое расположение подсветок */
+        .image-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Основная подсветка - позади картинки */
+        .glow-1 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(45deg, #8CAFF4, #8C4FF4);
+            top: 50%;
+            right: 15%;
+            transform: translateY(-50%);
+            animation: glowPulse 4s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        /* Вращающаяся орбитальная подсветка */
+        .glow-2 {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #8C4FF4, #4FF48C);
+            top: 50%;
+            right: 15%;
+            transform: translateY(-50%);
+            animation: glowOrbit 8s linear infinite;
+            opacity: 0.5;
+        }
+
+        /* Плавающая подсветка сверху */
+        .glow-3 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(225deg, #F48C4F, #8CAFF4);
+            top: 30%;
+            right: 20%;
+            animation: glowFloat 6s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        /* Подсветка снизу */
+        .glow-4 {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(300deg, #8C4FF4, #F48C4F);
+            bottom: 20%;
+            right: 25%;
+            animation: glowMove 7s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        /* Дополнительная подсветка сбоку */
+        .glow-5 {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(90deg, #4FF48C, #8CAFF4);
+            top: 40%;
+            right: 5%;
+            animation: glowPulse 5s ease-in-out infinite reverse;
+            opacity: 0.4;
+        }
+
+        .shimmer-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: translateX(-100%) rotate(45deg);
+            animation: shimmer 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* Градиентный фон для всей правой части */
+        .hero--image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(140, 175, 244, 0.1) 0%, rgba(140, 79, 244, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero--info {
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .hero--content {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .hero--image {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero--info h1 {
+                font-size: 2rem;
+                max-width: 100%;
+            }
+
+            .hero--info img:hover {
+                transform: scale(1.03);
+            }
+
+            /* Адаптация подсветок для мобильных */
+            .glow-1 {
+                width: 120px;
+                height: 120px;
+                right: 10%;
+                top: 40%;
+            }
+
+            .glow-2 {
+                width: 70px;
+                height: 70px;
+                right: 10%;
+                top: 40%;
+            }
+
+            .glow-3 {
+                width: 80px;
+                height: 80px;
+                top: 25%;
+                right: 15%;
+            }
+
+            .glow-4 {
+                width: 90px;
+                height: 90px;
+                bottom: 15%;
+                right: 20%;
+            }
+
+            .glow-5 {
+                width: 60px;
+                height: 60px;
+                top: 35%;
+                right: 5%;
+            }
+
+            .hero--image::before {
+                width: 250px;
+                height: 250px;
+                right: -10%;
+                top: -30%;
+            }
+        }
+
+        
+        @media (prefers-reduced-motion: reduce) {
+            .herocontainer,
+            .hero--info,
+            .hero--info h2,
+            .hero--info h1,
+            .hero--info p,
+            .btn,
+            .hero--info img {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .image-glow {
+                animation: none !important;
+            }
+            
+            .shimmer-effect {
+                animation: none;
+                opacity: 0;
+            }
+        }
+
+/*БЛОК 2*/
+    @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes containerSlide {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes glowFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Стили benefits */
+        .benefits {
+            padding-bottom: 6.25rem;
+            position: relative;
+            width: 100%;
+            max-width: 115.1875rem;
+            margin: 0 auto;
+            padding: 0 0.625rem;
+            box-sizing: border-box;
+            margin-top: 1rem;
+            animation: fadeIn 0.8s ease-out 0.1s both;
+        }
+
+        .benefits__container {
+            margin: 10px;
+            max-width: 115.1875rem;
+            padding: 2rem 2rem;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background: #fff;
+            border-radius: 2rem;
+            box-shadow: 0 0 1.25rem rgba(59, 59, 59, 0.06);
+            margin: 0 auto;
+            overflow: hidden;
+            gap: 2rem;
+            box-sizing: border-box;
+            min-height: 400px;
+            opacity: 0;
+            animation: containerSlide 0.8s ease-out 0.3s forwards;
+        }
+
+        .benefits__badge {
+            position: absolute;
+            top: 1.25rem;
+            left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            width: 8rem;
+            height: 3.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(135deg, #8C4FF4, #7C3AED);
+            border-radius: 1.5rem;
+            box-shadow: 0 0.25rem 1.25rem rgba(140, 79, 244, 0.25);
+            opacity: 0.95;
+            animation: fadeInDown 0.6s ease-out 0.5s both;
+        }
+
+        .benefits__items {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .benefits__item {
+            flex: 1;
+            max-width: 22rem;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 320px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .benefits__item:nth-child(1) { 
+            animation: fadeInUp 0.6s ease-out 0.7s both; 
+        }
+        .benefits__item:nth-child(2) { 
+            animation: fadeInUp 0.6s ease-out 0.9s both; 
+        }
+        .benefits__item:nth-child(3) { 
+            animation: fadeInUp 0.6s ease-out 1.1s both; 
+        }
+
+        .benefits__item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .benefits__img-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2.5rem;
+            height: 11rem;
+            width: 100%;
+            animation: scaleIn 0.6s ease-out 0.8s both;
+        }
+
+        .benefits__img-wrapper::before {
+            content: "";
+            display: block;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(140, 79, 244, 0.15), rgba(140, 175, 244, 0.1));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(140, 79, 244, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        .benefits__icon {
+            width: 6rem !important;
+            height: 6rem !important;
+            position: relative;
+            z-index: 5;
+            object-fit: contain;
+            filter: none;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out 1.5s infinite;
+        }
+
+        .benefits__title {
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.625rem;
+            color: #1a202c;
+            line-height: 1.3;
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.6s ease-out 1s both;
+        }
+
+        .benefits__desc {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 1.0625rem;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.6s ease-out 1.2s both;
+        }
+
+        /* Ховер эффекты */
+        .benefits__item:hover .benefits__img-wrapper::before {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: linear-gradient(135deg, rgba(140, 79, 244, 0.2), rgba(140, 175, 244, 0.15));
+            backdrop-filter: blur(25px);
+        }
+
+        .benefits__item:hover .benefits__icon {
+            transform: scale(1.1);
+        }
+
+        .benefits__item:hover .benefits__title {
+            color: #8C4FF4;
+        }
+
+        /* Подсветки для benefits */
+        .benefits-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .benefits-glow-1 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #8CAFF4, #8C4FF4);
+            top: 20%;
+            left: 10%;
+            animation: glowPulse 4s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        .benefits-glow-2 {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8C4FF4, #4FF48C);
+            bottom: 30%;
+            right: 15%;
+            animation: glowFloat 6s ease-in-out infinite;
+            opacity: 0.2;
+        }
+
+        /* Улучшенная адаптивность */
+        @media (max-width: 1200px) {
+            .benefits__container {
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+            }
+            
+            .benefits__items {
+                gap: 1.5rem;
+            }
+            
+            .benefits__item {
+                padding: 1.5rem 0.5rem;
+                min-height: 300px;
+            }
+            
+            .benefits__img-wrapper {
+                height: 10rem;
+                margin-bottom: 2rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 9rem;
+                height: 9rem;
+            }
+            
+            .benefits__icon {
+                width: 5.5rem !important;
+                height: 5.5rem !important;
+            }
+            
+            .benefits__title {
+                font-size: 1.5rem;
+                min-height: 3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .benefits__desc {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .benefits {
+                padding: 0 1rem;
+                margin-top: 0.5rem;
+            }
+            
+            .benefits__container {
+                padding: 2rem 2rem;
+                border-radius: 1.5rem;
+            }
+            
+            .benefits__badge {
+                top: 1rem;
+                left: 1rem;
+                width: 7rem;
+                height: 3rem;
+                font-size: 1.375rem;
+            }
+            
+            .benefits__items {
+                gap: 1rem;
+            }
+            
+            .benefits__item {
+                min-height: 280px;
+                padding: 1.5rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .benefits {
+                margin-top: 1.35rem;
+                padding-bottom:10rem;
+            }
+            .benefits__container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 4rem 2rem 2.5rem;
+                min-height: auto;
+                margin: -0.5rem;
+            }
+            
+            .benefits__badge {
+                 width: 7rem;
+                height: 2.8rem;
+                font-size: 1.25rem;
+                top: 1rem;
+                left: 1rem;
+            }
+            
+            .benefits__items {
+                flex-direction: column;
+                gap: 2.5rem;
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .benefits__item {
+                max-width: 100%;
+                min-height: auto;
+                width: 100%;
+                padding: 0;
+                min-height: 250px;
+            }
+            
+            .benefits__img-wrapper {
+                height: 9rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 8rem;
+                height: 8rem;
+            }
+            
+            .benefits__icon {
+                width: 5rem !important;
+                height: 5rem !important;
+            }
+            
+            .benefits__title {
+                font-size: 1.35rem;
+                min-height: auto;
+                margin-bottom: 1rem;
+            }
+            
+            .benefits__desc {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .benefits {
+                margin-top: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            
+            .benefits__container {
+                padding: 3.5rem 1.5rem 2rem;
+                margin: -0.5rem;
+                border-radius: 1.25rem;
+                gap: 2rem;
+            }
+            
+            .benefits__badge {
+                width: 7rem;
+                height: 2.8rem;
+                font-size: 1.25rem;
+                top: 1rem;
+                left: 1rem;
+            }
+            
+            .benefits__items {
+                gap: 2rem;
+            }
+            
+            .benefits__item {
+                min-height: 230px;
+            }
+            
+            .benefits__img-wrapper {
+                height: 8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 7rem;
+                height: 7rem;
+            }
+            
+            .benefits__icon {
+                width: 4.5rem !important;
+                height: 4.5rem !important;
+            }
+            
+            .benefits__title {
+                font-size: 1.375rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .benefits__desc {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .benefits-glow-1,
+            .benefits-glow-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .benefits {
+                padding: 0 0.5rem;
+                margin-top: 1rem;
+                padding-bottom: 3rem;
+            }
+            
+            .benefits__container {
+                padding: 3rem 1rem 1.5rem;
+                border-radius: 1rem;
+                gap: 1.5rem;
+                margin: 0.25rem;
+            }
+            
+            .benefits__badge {
+                width: 6rem;
+                height: 2.5rem;
+                font-size: 1.125rem;
+                top: 1rem;
+                left: 1rem;
+            }
+            
+            .benefits__items {
+                gap: 1.5rem;
+            }
+            
+            .benefits__item {
+                min-height: 200px;
+                padding: 0.5rem 0;
+            }
+            
+            .benefits__img-wrapper {
+                height: 7rem;
+                margin-bottom: 1rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 6rem;
+                height: 6rem;
+            }
+            
+            .benefits__icon {
+                width: 4rem !important;
+                height: 4rem !important;
+            }
+            
+            .benefits__title {
+                font-size: 1.25rem;
+                margin-bottom: 0.5rem;
+                min-height: auto;
+            }
+            
+            .benefits__desc {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .benefits__container {
+                padding: 2.5rem 0.75rem 1.25rem;
+            }
+            
+            .benefits__item {
+                min-height: 180px;
+            }
+            
+            .benefits__img-wrapper {
+                height: 6rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 5rem;
+                height: 5rem;
+            }
+            
+            .benefits__icon {
+                width: 3.5rem !important;
+                height: 3.5rem !important;
+            }
+            
+            .benefits__title {
+                font-size: 1.125rem;
+            }
+            
+            .benefits__desc {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .benefits__container,
+            .benefits__badge,
+            .benefits__item,
+            .benefits__img-wrapper,
+            .benefits__icon,
+            .benefits__title,
+            .benefits__desc {
+                animation: none !important;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .benefits-glow {
+                animation: none !important;
+            }
+        }
+
+        /* Поддержка landscape ориентации на мобильных */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .benefits {
+                padding-bottom: 3rem;
+            }
+             
+
+        }
+            
+            .benefits__container {
+                min-height: 300px;
+                padding: 2rem 1.5rem;
+            }
+            
+            .benefits__item {
+                min-height: 200px;
+            }
+            
+            .benefits__img-wrapper {
+                height: 6rem;
+                margin-bottom: 1rem;
+            }
+            
+            .benefits__img-wrapper::before {
+                width: 5rem;
+                height: 5rem;
+            }
+            
+            .benefits__icon {
+                width: 4rem !important;
+                height: 4rem !important;
+            }
+        
+
+
+
+        
