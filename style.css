@@ -1730,7 +1730,7 @@ body {
 .fourth-section {
     width: 100%;
     max-width: 115.1875rem;
-    min-width: 20rem; /* Добавил минимальную ширину */
+    min-width: 20rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -1909,7 +1909,7 @@ body {
    .fourth-section{
     width: 100% !important;
     max-width: 100%;
-    min-width: 20rem; /* Сохраняем минимальную ширину */
+    min-width: 20rem;
     height: max-content !important;
     padding: 0 1rem;
     gap: 1.5rem;
@@ -1924,7 +1924,7 @@ body {
 
    .map-block{
         width: 100% !important;
-        min-width: 18rem; /* Минимальная ширина для контента */
+        min-width: 18rem;
         height: 60.75rem !important;
         padding: 1rem !important;
         display: flex;
@@ -1937,7 +1937,6 @@ body {
         transform-origin: center top;
    }
 
-   /* Уменьшаем размеры элементов пропорционально */
    .circle{
         width: 8.4375rem !important; 
         height: 8.4375rem !important;
@@ -2038,13 +2037,13 @@ body {
    }
 }
 
-/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ - еще больше уменьшаем */
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ - сдвигаем контент левее */
 @media (max-width: 480px) {
    .fourth-section{
     padding: 0 0.5rem;
     gap: 1rem;
     margin-top: 0.5rem;
-    min-width: 18rem; /* Уменьшаем минимальную ширину для маленьких экранов */
+    min-width: 18rem;
    }
    
    .fourth-section h1{
@@ -2054,27 +2053,218 @@ body {
 
    .map-block{
         height: 60.75rem !important;
-        min-width: 16rem; /* Еще меньше минимальная ширина */
+        min-width: 16rem;
         padding: 0.75rem !important;
         border-radius: 1.5rem;
         margin: 0.25rem;
         transform: scale(0.75);
         transform-origin: center top;
    }
+
+   /* Сдвигаем все элементы левее на 1rem */
+   .CFT{
+    left: 5rem !important; /* было 6rem */
+   }
+
+   .CS{
+    left: 11.9375rem !important; /* было 12.9375rem */
+   }
+
+   .CT{
+    left: 4.625rem !important; /* было 5.625rem */
+   }
+
+   .CF{
+    left: 7.75rem !important; /* было 8.75rem */
+   }
+
+   .map-p1{
+    left: 8.4375rem !important; /* было 9.4375rem */
+   }
+   .map-p2{
+    left: 2.0625rem !important; /* было 3.0625rem */
+   }
+   .map-p3{
+    left: 8.875rem !important; /* было 9.875rem */
+   }
+   .map-p4{
+    left: 2.4375rem !important; /* было 3.4375rem */
+   }
+
+   .tractor{
+    left: 3.8125rem !important; /* было 4.8125rem */
+   }
+
+   .seedling{
+    left: 13rem !important; /* было 14rem */
+   }
+
+   .watering{
+    left: 6.375rem !important; /* было 7.375rem */
+   }
+
+   .tree{
+    left: 8.75rem !important; /* было 9.75rem */
+   }
+
+   .line1{
+    left: 9.4375rem !important; /* было 10.4375rem */
+   }
+
+   .line2{
+    left: 8rem !important; /* было 9rem */
+   }
+
+   .line3{
+    left: 4rem !important; /* было 5rem */
+   }
 }
 
-/* ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ - максимальное уменьшение */
-@media (max-width: 360px) {
+/* ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ (400px) - сильнее сдвигаем */
+@media (max-width: 400px) {
    .fourth-section{
-    min-width: 16rem; /* Минимальная ширина для очень маленьких экранов */
+    min-width: 16rem;
    }
 
    .map-block{
         height: 60.75rem !important;
-        min-width: 14rem; /* Минимальная ширина контента */
+        min-width: 14rem;
         padding: 0.5rem !important;
+        transform: scale(0.7);
+        transform-origin: center top;
+   }
+
+   /* Сдвигаем еще больше на 1.5rem от оригинального */
+   .CFT{
+    left: 4.5rem !important; /* было 6rem */
+   }
+
+   .CS{
+    left: 11.4375rem !important; /* было 12.9375rem */
+   }
+
+   .CT{
+    left: 4.125rem !important; /* было 5.625rem */
+   }
+
+   .CF{
+    left: 7.25rem !important; /* было 8.75rem */
+   }
+
+   .map-p1{
+    left: 7.9375rem !important; /* было 9.4375rem */
+   }
+   .map-p2{
+    left: 1.5625rem !important; /* было 3.0625rem */
+   }
+   .map-p3{
+    left: 8.375rem !important; /* было 9.875rem */
+   }
+   .map-p4{
+    left: 1.9375rem !important; /* было 3.4375rem */
+   }
+
+   .tractor{
+    left: 3.3125rem !important; /* было 4.8125rem */
+   }
+
+   .seedling{
+    left: 12.5rem !important; /* было 14rem */
+   }
+
+   .watering{
+    left: 5.875rem !important; /* было 7.375rem */
+   }
+
+   .tree{
+    left: 8.25rem !important; /* было 9.75rem */
+   }
+
+   .line1{
+    left: 8.9375rem !important; /* было 10.4375rem */
+   }
+
+   .line2{
+    left: 7.5rem !important; /* было 9rem */
+   }
+
+   .line3{
+    left: 3.5rem !important; /* было 5rem */
+   }
+}
+
+/* САМЫЕ МАЛЕНЬКИЕ ТЕЛЕФОНЫ (360px и меньше) - сдвигаем только нужные элементы */
+@media (max-width: 360px) {
+   .fourth-section{
+    min-width: 16rem;
+    padding: 0 0.25rem;
+   }
+
+   .map-block{
+        height: 60.75rem !important;
+        min-width: 14rem;
+        padding: 0.4rem !important;
         transform: scale(0.65);
         transform-origin: center top;
+   }
+
+   /* Сдвигаем только картинку с книгами (seedling) еще чуточку левее */
+   .seedling{
+    left: 12rem !important; /* было 12.5rem - сдвигаем еще левее */
+   }
+
+   /* Остальные элементы оставляем как были */
+   .CFT{
+    left: 4.5rem !important;
+   }
+
+   .CS{
+    left: 11.4375rem !important;
+   }
+
+   .CT{
+    left: 4.125rem !important;
+   }
+
+   .CF{
+    left: 7.25rem !important;
+   }
+
+   .map-p1{
+    left: 7.9375rem !important;
+   }
+   .map-p2{
+    left: 1.5625rem !important;
+   }
+   .map-p3{
+    left: 8.375rem !important;
+   }
+   .map-p4{
+    left: 1.9375rem !important;
+   }
+
+   .tractor{
+    left: 3.3125rem !important;
+   }
+
+   .watering{
+    left: 5.875rem !important;
+   }
+
+   .tree{
+    left: 8.25rem !important;
+   }
+
+   .line1{
+    left: 8.9375rem !important;
+   }
+
+   .line2{
+    left: 7.5rem !important;
+   }
+
+   .line3{
+    left: 3.5rem !important;
    }
 }
 
