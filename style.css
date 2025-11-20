@@ -1730,6 +1730,7 @@ body {
 .fourth-section {
     width: 100%;
     max-width: 115.1875rem;
+    min-width: 20rem; /* Добавил минимальную ширину */
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -1768,13 +1769,6 @@ body {
     animation: containerSlide 0.8s ease-out 0.5s forwards;
 }
 
-/* @media (min-width: 768px) {
-    .fourth-section .map-block {
-        height: 43.4375rem;
-        padding: 3rem;
-    }
-} */
-
 .fourth-section .map-block .circle {
     width: 10rem;
     height: 10rem;
@@ -1788,13 +1782,6 @@ body {
     box-shadow: 0 0 20px rgba(106, 13, 173, 0.4);
     border: 0.0625rem solid rgba(140, 79, 244, 0.1);
 }
-
-/* @media (min-width: 768px) {
-    .fourth-section .map-block .circle {
-        width: 14.75rem;
-        height: 14.75rem;
-    }
-} */
 
 /* Позиционирование кругов */
 .fourth-section .map-block .CFT {
@@ -1821,28 +1808,6 @@ body {
     animation: fadeIn 0.6s ease-out 1.3s both;
 }
 
-/* @media (min-width: 1200px) {
-    .fourth-section .map-block .CFT {
-        top: 7rem;
-        left: 4.625rem;
-    }
-
-    .fourth-section .map-block .CS {
-        top: 21.75rem;
-        left: 28.0625rem;
-    }
-
-    .fourth-section .map-block .CT {
-        top: 4.6875rem;
-        left: 51.375rem;
-    }
-
-    .fourth-section .map-block .CF {
-        top: 19.4375rem;
-        left: 78.1875rem;
-    }
-} */
-
 .fourth-section .map-block p {
     width: max-content;
     background-color: #f8f9fa;
@@ -1860,20 +1825,6 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border: 0.0625rem solid rgba(140, 79, 244, 0.1);
 }
-
-/* @media (min-width: 768px) {
-    .fourth-section .map-block p {
-        font-size: 1rem;
-        max-width: 220px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .fourth-section .map-block p {
-        font-size: 1.25rem;
-        max-width: none;
-    }
-} */
 
 .fourth-section .map-block .map-p1 {
     top: 10%;
@@ -1899,28 +1850,6 @@ body {
     animation: fadeInUp 0.6s ease-out 1.4s both;
 }
 
-/* @media (min-width: 1200px) {
-    .fourth-section .map-block .map-p1 {
-        top: 7.1875rem;
-        left: 12rem;
-    }
-
-    .fourth-section .map-block .map-p2 {
-        top: 32.75rem;
-        left: 29.4375rem;
-    }
-
-    .fourth-section .map-block .map-p3 {
-        top: 4.1875rem;
-        left: 57.4375rem;
-    }
-
-    .fourth-section .map-block .map-p4 {
-        top: 17.625rem;
-        left: 68rem;
-    }
-} */
-
 /* Изображения с фиолетовой подсветкой */
 .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
     position: absolute;
@@ -1930,21 +1859,6 @@ body {
     height: auto;
     animation: scaleIn 0.6s ease-out 0.9s both;
 }
-
-/* @media (min-width: 768px) {
-    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
-        width: 6rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
-        width: auto;
-        height: auto;
-        max-width: 12rem;
-        max-height: 10rem;
-    }
-} */
 
 /* Позиционирование изображений */
 .fourth-section .map-block .tractor {
@@ -1990,26 +1904,47 @@ body {
     animation: fadeIn 0.6s ease-out 1.7s both;
 }
 
-@media (max-width: 75rem) {
+/* ТЕЛЕФОНЫ - SCALE ТРАНСФОРМАЦИЯ */
+@media (max-width: 768px) {
    .fourth-section{
     width: 100% !important;
-    max-width: 43.75rem;
-    min-width: 26.9375rem;
+    max-width: 100%;
+    min-width: 20rem; /* Сохраняем минимальную ширину */
     height: max-content !important;
+    padding: 0 1rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
    } 
+   
    .fourth-section h1{
     font-weight: 800;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
    }
 
    .map-block{
-        width: inherit !important;
+        width: 100% !important;
+        min-width: 18rem; /* Минимальная ширина для контента */
         height: 60.75rem !important;
-        padding: 0 !important;
+        padding: 1rem !important;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        border-radius: 2rem;
+        margin: 0.5rem;
+        min-height: auto;
+        transform: scale(0.85);
+        transform-origin: center top;
    }
 
-   .circle{width: 8.4375rem !important; height: 8.4375rem !important;}
+   /* Уменьшаем размеры элементов пропорционально */
+   .circle{
+        width: 8.4375rem !important; 
+        height: 8.4375rem !important;
+        position: absolute !important;
+   }
 
+   /* Сохраняем оригинальное позиционирование из варианта 2 */
    .CFT{
     top: 5rem !important;
     left: 6rem !important;
@@ -2103,40 +2038,85 @@ body {
    }
 }
 
-/* @media (max-width: 30rem) {
-    .fourth-section {
-        padding: 0 0.5rem;
-        margin-top: 1rem;
-    }
-    
-    .fourth-section .map-block {
-        padding: 1rem 0.5rem;
-        border-radius: 1rem;
-        min-height: 20rem;
-    }
-    
-    .fourth-section .map-block .circle {
-        width: 4rem;
-        height: 4rem;
-    }
-    
-    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
-        width: 2.5rem;
-    }
-    
-    .fourth-section .map-block p {
-        font-size: 0.6rem;
-        max-width: 120px;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .fourth-section .map-block .map-p4 {
-        left: 45%;
-        max-width: 100px;
-    }
-} */
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ - еще больше уменьшаем */
+@media (max-width: 480px) {
+   .fourth-section{
+    padding: 0 0.5rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    min-width: 18rem; /* Уменьшаем минимальную ширину для маленьких экранов */
+   }
+   
+   .fourth-section h1{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+   }
 
-/* Анимации из benefits */
+   .map-block{
+        height: 60.75rem !important;
+        min-width: 16rem; /* Еще меньше минимальная ширина */
+        padding: 0.75rem !important;
+        border-radius: 1.5rem;
+        margin: 0.25rem;
+        transform: scale(0.75);
+        transform-origin: center top;
+   }
+}
+
+/* ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ - максимальное уменьшение */
+@media (max-width: 360px) {
+   .fourth-section{
+    min-width: 16rem; /* Минимальная ширина для очень маленьких экранов */
+   }
+
+   .map-block{
+        height: 60.75rem !important;
+        min-width: 14rem; /* Минимальная ширина контента */
+        padding: 0.5rem !important;
+        transform: scale(0.65);
+        transform-origin: center top;
+   }
+}
+
+/* ПЛАНШЕТЫ - только для экранов больше 768px */
+@media (min-width: 769px) and (max-width: 1024px) {
+   .fourth-section{
+    padding: 0 1.5rem;
+   }
+   
+   .fourth-section .map-block .circle {
+        width: 8rem;
+        height: 8rem;
+   }
+   
+   .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+        width: 8rem;
+   }
+   
+   .fourth-section .map-block p {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.9rem;
+   }
+}
+
+/* НОУТБУКИ - только для экранов больше 1024px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+   .fourth-section .map-block .circle {
+        width: 9rem;
+        height: 9rem;
+   }
+   
+   .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+        width: 9rem;
+   }
+   
+   .fourth-section .map-block p {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+   }
+}
+
+/* Анимации */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -2187,7 +2167,7 @@ body {
         transform: translateY(-0.625rem);
     }
 }
-/* 
+
 @media (prefers-reduced-motion: reduce) {
     .fourth-section,
     .fourth-section h1,
@@ -2197,7 +2177,7 @@ body {
     .fourth-section .map-block img:not(.line1):not(.line2):not(.line3),
     .fourth-section .map-block .line1,
     .fourth-section .map-block .line2,
-    .fourth-section .map-block .line3 {}
-
-   
-} */
+    .fourth-section .map-block .line3 {
+        animation: none;
+    }
+}
