@@ -1338,7 +1338,7 @@ body {
     margin: 0 auto;
     padding: 0 0.625rem;
     box-sizing: border-box;
-    margin-top: 1rem;
+    margin-top: 5rem;
     animation: fadeIn 0.8s ease-out 0.1s both;
 }
 
@@ -1446,6 +1446,7 @@ body {
     color: #0019ff;
     text-align: center;
     line-height: 1.2;
+    transition: all 0.3s ease;
 }
 
 .head-content p {
@@ -1466,7 +1467,7 @@ body {
     min-height: auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(0.8rem, 2vw, 1.9375rem);
+    gap: clamp(0.8rem, 2vw, 0.875rem);
     border-radius: 1.25rem;
     padding: clamp(1rem, 2.5vw, 2.125rem) clamp(0.5rem, 1.5vw, 0);
     background-color: #f5f5f5;
@@ -1478,7 +1479,7 @@ body {
 
 .main-content p {
     font-weight: 800;
-    font-size: clamp(0.8rem, 1.8vw, 1.25rem);
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
     letter-spacing: 0.13em;
     text-transform: uppercase;
     text-align: center;
@@ -1699,7 +1700,7 @@ body {
     }
     
     .cards-section .cards-block {
-        gap: 1.5rem; /* ИЗМЕНЕНО: уменьшил с 2.5rem до 1.5rem */
+        gap: 1.5rem; 
     }
     
     .head-content p,
@@ -1711,7 +1712,7 @@ body {
 /* Дополнительно для экранов больше 2560px */
 @media (min-width: 2560px) {
     .cards-section .cards-block {
-        gap: 1.25rem; /* ЕЩЕ МЕНЬШЕ на очень больших экранах */
+        gap: 1.25rem; 
     }
 }
 
@@ -1724,3 +1725,479 @@ body {
         transform: none;
     }
 }
+
+/* новый блок 4 */
+.fourth-section {
+    width: 100%;
+    max-width: 115.1875rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2.25rem;
+    animation: fadeIn 0.8s ease-out 0.1s both;
+}
+
+.fourth-section h1 {
+    width: fit-content;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.fourth-section .map-block {
+    width: 100%;
+    height: auto;
+    min-height: 25rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    position: relative;
+    box-shadow: 0 0 1.25rem rgba(217, 217, 217, 0.357);
+    overflow: hidden;
+    margin: 0.625rem;
+    animation: containerSlide 0.8s ease-out 0.5s forwards;
+}
+
+/* @media (min-width: 768px) {
+    .fourth-section .map-block {
+        height: 43.4375rem;
+        padding: 3rem;
+    }
+} */
+
+.fourth-section .map-block .circle {
+    width: 10rem;
+    height: 10rem;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(106, 13, 173, 0.4);
+    border: 0.0625rem solid rgba(140, 79, 244, 0.1);
+}
+
+/* @media (min-width: 768px) {
+    .fourth-section .map-block .circle {
+        width: 14.75rem;
+        height: 14.75rem;
+    }
+} */
+
+/* Позиционирование кругов */
+.fourth-section .map-block .CFT {
+    top: 10%;
+    left: 13%;
+    animation: fadeIn 0.6s ease-out 0.7s both;
+}
+
+.fourth-section .map-block .CS {
+    top: 55%;
+    left: 33%;
+    animation: fadeIn 0.6s ease-out 0.9s both;
+}
+
+.fourth-section .map-block .CT {
+    top: 8%;
+    left: 53%;
+    animation: fadeIn 0.6s ease-out 1.1s both;
+}
+
+.fourth-section .map-block .CF {
+    top: 50%;
+    left: 73%;
+    animation: fadeIn 0.6s ease-out 1.3s both;
+}
+
+/* @media (min-width: 1200px) {
+    .fourth-section .map-block .CFT {
+        top: 7rem;
+        left: 4.625rem;
+    }
+
+    .fourth-section .map-block .CS {
+        top: 21.75rem;
+        left: 28.0625rem;
+    }
+
+    .fourth-section .map-block .CT {
+        top: 4.6875rem;
+        left: 51.375rem;
+    }
+
+    .fourth-section .map-block .CF {
+        top: 19.4375rem;
+        left: 78.1875rem;
+    }
+} */
+
+.fourth-section .map-block p {
+    width: max-content;
+    background-color: #f8f9fa;
+    border-radius: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #1a202c;
+    text-align: center;
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 0.0625rem solid rgba(140, 79, 244, 0.1);
+}
+
+/* @media (min-width: 768px) {
+    .fourth-section .map-block p {
+        font-size: 1rem;
+        max-width: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fourth-section .map-block p {
+        font-size: 1.25rem;
+        max-width: none;
+    }
+} */
+
+.fourth-section .map-block .map-p1 {
+    top: 10%;
+    left: 18%;
+    animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.fourth-section .map-block .map-p2 {
+    top: 80%;
+    left: 20%;
+    animation: fadeInUp 0.6s ease-out 1s both;
+}
+
+.fourth-section .map-block .map-p3 {
+    top: 9%;
+    left: 57.6%;
+    animation: fadeInUp 0.6s ease-out 1.2s both;
+}
+
+.fourth-section .map-block .map-p4 {
+    top: 75%;
+    left: 62%;
+    animation: fadeInUp 0.6s ease-out 1.4s both;
+}
+
+/* @media (min-width: 1200px) {
+    .fourth-section .map-block .map-p1 {
+        top: 7.1875rem;
+        left: 12rem;
+    }
+
+    .fourth-section .map-block .map-p2 {
+        top: 32.75rem;
+        left: 29.4375rem;
+    }
+
+    .fourth-section .map-block .map-p3 {
+        top: 4.1875rem;
+        left: 57.4375rem;
+    }
+
+    .fourth-section .map-block .map-p4 {
+        top: 17.625rem;
+        left: 68rem;
+    }
+} */
+
+/* Изображения с фиолетовой подсветкой */
+.fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+    position: absolute;
+    z-index: 1;
+    filter: drop-shadow(0 0 15px rgba(106, 13, 173, 0.6));
+    width: 10rem;
+    height: auto;
+    animation: scaleIn 0.6s ease-out 0.9s both;
+}
+
+/* @media (min-width: 768px) {
+    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+        width: 6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+        width: auto;
+        height: auto;
+        max-width: 12rem;
+        max-height: 10rem;
+    }
+} */
+
+/* Позиционирование изображений */
+.fourth-section .map-block .tractor {
+    top: 17%;
+    left: 13.4%;
+    animation: float 3s ease-in-out 2s infinite;
+}
+
+.fourth-section .map-block .seedling {
+    top: 50%;
+    left: 33%;
+    animation: float 3s ease-in-out 2.2s infinite;
+}
+
+.fourth-section .map-block .watering {
+    top: 13%;
+    left: 53.6%;
+    animation: float 3s ease-in-out 2.4s infinite;
+}
+
+.fourth-section .map-block .tree {
+    top: 52%;
+    left: 73.5%;
+    animation: float 3s ease-in-out 2.6s infinite;
+}
+
+.line1{
+    position: absolute;
+    top: 30%;
+    left: 22.6%;
+    animation: fadeIn 0.6s ease-out 1.1s both;
+}
+.line2{
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    animation: fadeIn 0.6s ease-out 1.4s both;
+}
+.line3{
+    position: absolute;
+    top: 30%;
+    left: 62%;
+    animation: fadeIn 0.6s ease-out 1.7s both;
+}
+
+@media (max-width: 75rem) {
+   .fourth-section{
+    width: 100% !important;
+    max-width: 43.75rem;
+    min-width: 26.9375rem;
+    height: max-content !important;
+   } 
+   .fourth-section h1{
+    font-weight: 800;
+    font-size: 1.875rem;
+   }
+
+   .map-block{
+        width: inherit !important;
+        height: 60.75rem !important;
+        padding: 0 !important;
+   }
+
+   .circle{width: 8.4375rem !important; height: 8.4375rem !important;}
+
+   .CFT{
+    top: 5rem !important;
+    left: 6rem !important;
+   }
+
+   .CS{
+    top: 19.75rem !important;
+    left: 12.9375rem !important;
+   }
+
+   .CT{
+    top: 32.5rem !important;
+    left: 5.625rem !important;
+   }
+
+   .CF{
+    top: 47.25rem !important;
+    left: 8.75rem !important;
+   }
+
+   .map-block p{
+    height: fit-content;
+    padding: 0 0.5625rem !important;
+    font-size: 0.6563rem !important;
+    max-width: unset !important;
+   }
+
+   .map-p1{
+    top: 4.5625rem !important;
+    left: 9.4375rem !important;
+   }
+   .map-p2{
+    top: 25.875rem !important;
+    left: 3.0625rem !important;
+   }
+   .map-p3{
+    top: 39.5rem !important;
+    left: 9.875rem !important;
+   }
+   .map-p4{
+    top: 54.8125rem !important;
+    left: 3.4375rem !important;
+   }
+
+   .tractor{
+    width: 9.1875rem !important;
+    height: 9.3125rem !important;
+    top: 5.75rem !important;
+    left: 4.8125rem !important;
+   }
+
+   .seedling{
+    width: 9.125rem !important;
+    height: 9.125rem !important;
+    top: 16.6875rem !important;
+    left: 14rem !important;
+   }
+
+   .watering{
+    width: 8.75rem !important;
+    height: 7.75rem !important;
+    top: 31.75rem !important;
+    left: 7.375rem !important;
+   }
+
+   .tree{
+    width: 8.5625rem !important;
+    height: 5.9375rem !important;
+    top: 47.5625rem !important;
+    left: 9.75rem !important;
+   }
+
+   .line1{
+    position: absolute;
+    top: 13.1875rem !important;
+    left: 10.4375rem !important;
+   }
+
+   .line2{
+    position: absolute;
+    top: 27rem !important;
+    left: 9rem !important;
+    rotate: -15deg;
+   }
+
+   .line3{
+    position: absolute;
+    top: 37rem !important;
+    left: 5rem !important;
+    rotate: 30deg;
+   }
+}
+
+/* @media (max-width: 30rem) {
+    .fourth-section {
+        padding: 0 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .fourth-section .map-block {
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+        min-height: 20rem;
+    }
+    
+    .fourth-section .map-block .circle {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3) {
+        width: 2.5rem;
+    }
+    
+    .fourth-section .map-block p {
+        font-size: 0.6rem;
+        max-width: 120px;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .fourth-section .map-block .map-p4 {
+        left: 45%;
+        max-width: 100px;
+    }
+} */
+
+/* Анимации из benefits */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes containerSlide {
+    from {
+        opacity: 0;
+        transform: translateY(3.125rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.625rem);
+    }
+}
+/* 
+@media (prefers-reduced-motion: reduce) {
+    .fourth-section,
+    .fourth-section h1,
+    .fourth-section .map-block,
+    .fourth-section .map-block .circle,
+    .fourth-section .map-block p,
+    .fourth-section .map-block img:not(.line1):not(.line2):not(.line3),
+    .fourth-section .map-block .line1,
+    .fourth-section .map-block .line2,
+    .fourth-section .map-block .line3 {}
+
+   
+} */
