@@ -18,8 +18,6 @@ body {
   align-items: center;
   gap: 0.875rem;
 }
-
-
 .first-section {
   width: 100%;
   max-width: 115.1875rem;
@@ -235,6 +233,8 @@ body {
 }
 
 
+
+
   /*БЛОК 1*/
  
    @keyframes fadeInUp {
@@ -374,12 +374,14 @@ body {
         }
 
         .herocontainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding-bottom: 6.25rem;
+            position: relative;
             width: 100%;
-            margin: 0;
-            padding: 0;
+            max-width: 115.1875rem;
+            margin: 0rem auto;
+            padding: 0 0.625rem;
+            box-sizing: border-box;
+            margin-top: 1rem;
             animation: containerSlide 0.6s ease-out 0.1s both;
         }
 
@@ -790,7 +792,7 @@ body {
             padding-bottom: 6.25rem;
             position: relative;
             width: 100%;
-            max-width: 115.1875rem;
+            max-width: 1920rem;
             margin: 0 auto;
             padding: 0 0.625rem;
             box-sizing: border-box;
@@ -986,6 +988,7 @@ body {
         }
 
         /* Улучшенная адаптивность */
+        
         @media (max-width: 75rem) {
             .benefits__container {
                 padding: 2rem 1.5rem;
@@ -1335,7 +1338,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 115.1875rem;
-    margin: 0 auto;
+    margin: 0rem auto;
     padding: 0 0.625rem;
     box-sizing: border-box;
     margin-top: 5rem;
@@ -1377,12 +1380,17 @@ body {
     user-select: none;
 }
 
-.active {
+.hFirst.active {
+    color: #7C3AED !important; /* фиолетовый для ОГЭ */
     background-color: #fff;
-    color: #7C3AED !important;
 }
 
-/* Блок карточек - УВЕЛИЧИЛ gap для больших экранов */
+.hSecond.active {
+    color: #0019ff !important; /* синий для ЕГЭ */
+     background-color: #fff;
+}
+
+/*  background-color: #fff; */
 .cards-section .cards-block {
     width: 100%;
     display: grid;
@@ -1696,7 +1704,8 @@ body {
 /* Для очень больших экранов - УМЕНЬШИЛ gap */
 @media (min-width: 1920px) {
     .cards-section {
-        max-width: 1400px;
+        max-width: 1920px;
+        left: 1rem;
     }
     
     .cards-section .cards-block {
@@ -2208,12 +2217,12 @@ body {
         transform-origin: center top;
    }
 
-   /* Сдвигаем только картинку с книгами (seedling) еще больше левее */
+  
    .seedling{
-    left: 11rem !important; /* было 12.5rem - сдвигаем на 1.5rem левее */
+    left: 9.5rem !important; 
    }
 
-   /* Остальные элементы оставляем как были */
+   
    .CFT{
     left: 4.5rem !important;
    }
