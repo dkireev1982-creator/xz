@@ -171,6 +171,157 @@
         <img src="./img/Line 5.svg" alt="" class="line3" />
       </div>
     </div>
+  
+     <div class="accordion-section">
+        <div class="accordion-container">
+            <!-- Подсветки -->
+            <div class="accordion-glow glow-left"></div>
+            <div class="accordion-glow glow-right"></div>
+            <div class="accordion-glow glow-center"></div>
+
+            <!-- Заголовок секции -->
+            <h2 class="accordion-title">FAQ</h2>
+
+            <!-- Аккордеон -->
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Что входит в стоимость занятий?
+                    </button>
+                    <div class="accordion-content">
+                        <p>В стоимость входят: сами занятия с преподавателем, все учебные материалы, доступ к онлайн-платформе, пробные тестирования, консультации куратора и регулярные отчеты о прогрессе. Дополнительных платежей нет.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item active">
+                    <button class="accordion-header">
+                        Есть ли пробный урок?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Да, первое занятие абсолютно бесплатное. Вы познакомитесь с преподавателем, оцените нашу методику и получите детальный план подготовки. Никаких обязательств — только полезный опыт и ценные рекомендации.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Как вы гарантируете качество подготовки?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Все наши преподаватели проходят многоэтапный отбор и регулярное повышение квалификации. Мы используем только актуальные материалы ФИПИ, отслеживаем прогресс каждого ученика и корректируем программу при необходимости.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="seven-section">
+        <div class="form-container">
+            <!-- Подсветки -->
+            <div class="form-glow glow-left"></div>
+            <div class="form-glow glow-right"></div>
+            <div class="form-glow glow-center"></div>
+
+            <div class="form-text-block">
+                <div class="form-text-head">
+                    <h1>Готовишься к ОГЭ или ЕГЭ?</h1>
+                    <h2>
+                        Получи высокие баллы на экзаменах с нашей онлайн-школой! 
+                        Профессиональная подготовка по всем предметам.
+                    </h2>
+                </div>
+                <p>Онлайн школа подготовки к ОГЭ и ЕГЭ. Все права защищены</p>
+            </div>
+            
+            <div class="form-block">
+                <div class="success-message" id="successMessage">
+                    Заявка успешно отправлена! Наш менеджер свяжется с вами для консультации.
+                </div>
+                
+                <form id="applicationForm" class="application-form">
+                    <div class="inputs-block">
+                        <div class="names">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Имя ученика"
+                                    id="firstName"
+                                    name="firstName"
+                                />
+                                <div class="error-message" id="firstNameError">Пожалуйста, введите имя</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" placeholder="Email для связи" id="email" name="email" />
+                            <div class="error-message" id="emailError">Пожалуйста, введите корректный email</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input
+                                type="tel"
+                                placeholder="Телефон родителя"
+                                id="phone"
+                                name="phone"
+                            />
+                            <div class="error-message" id="phoneError">Пожалуйста, введите корректный номер телефона</div>
+                        </div>
+                        
+                        <div class="drop-inputs">
+                            <div class="form-group">
+                                <input
+                                    list="exam-list"
+                                    name="exam"
+                                    placeholder="Выберите экзамен"
+                                    class="custom-input"
+                                    id="exam"
+                                />
+                                <datalist id="exam-list">
+                                    <option value="ОГЭ"></option>
+                                    <option value="ЕГЭ"></option>
+                                </datalist>
+                                <div class="error-message" id="examError">Пожалуйста, выберите экзамен</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input
+                                    list="subject-list"
+                                    name="subject"
+                                    placeholder="Выберите предмет"
+                                    class="custom-input"
+                                    id="subject"
+                                />
+                                <datalist id="subject-list">
+                                    <option value="Математика"></option>
+                                    <option value="Русский язык"></option>
+                                    <option value="Физика"></option>
+                                    <option value="Химия"></option>
+                                    <option value="Биология"></option>
+                                    <option value="История"></option>
+                                    <option value="Обществознание"></option>
+                                    <option value="Английский язык"></option>
+                                    <option value="Информатика"></option>
+                                    <option value="Литература"></option>
+                                    <option value="География"></option>
+                                </datalist>
+                                <div class="error-message" id="subjectError">Пожалуйста, выберите предмет</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <button type="submit" class="submit-application-btn" id="submitBtn">
+                    Начать подготовку
+                </button>
+                
+                <p>
+                    Нажимая на "Начать подготовку", вы даете согласие на обработку
+                    персональных данных
+                </p>
+            </div>
+        </div>
+    </div>
+    
 </body>
 <script src="./script.js"></script>
 </html>
