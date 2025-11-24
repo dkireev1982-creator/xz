@@ -300,5 +300,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Функция для переключения между курсами ОГЭ и ЕГЭ
+function initCourseSwitch() {
+    const tabs = document.querySelectorAll('.switch-tab');
+    const courseSelections = document.querySelectorAll('.course-selection');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Убираем активный класс у всех вкладок
+            tabs.forEach(t => t.classList.remove('active'));
+            // Добавляем активный класс к текущей вкладке
+            tab.classList.add('active');
+            
+            // Получаем тип курса из data-атрибута
+            const courseType = tab.getAttribute('data-course');
+            
+            // Скрываем все выборы курсов
+            courseSelections.forEach(selection => {
+                selection.classList.remove('active');
+            });
+            
+            // Показываем соответствующий выбор курса
+            const activeSelection = document.querySelector(`[data-course-type="${courseType}"]`);
+            if (activeSelection) {
+                activeSelection.classList.add('active');
+            }
+        });
+    });
+}
 
 
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const burgerButton = document.querySelector('.burger-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const header = document.querySelector('header');
+            
+            if (burgerButton && mobileMenu && header) {
+                burgerButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpening = !mobileMenu.classList.contains('active');
+                    
+                    mobileMenu.classList.toggle('active');
+                    burgerButton.classList.toggle('active');
+                    header.classList.toggle('menu-opened');
+                });
+                
+                document.querySelectorAll('.mobile-nav-link, .mobile-application-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        closeMenu();
+                    });
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.burger-button') && 
+                        !event.target.closest('.mobile-menu')) {
+                        closeMenu();
+                    }
+                });
+                
+                function closeMenu() {
+                    mobileMenu.classList.remove('active');
+                    burgerButton.classList.remove('active');
+                    header.classList.remove('menu-opened');
+                }
+            }
+        });
