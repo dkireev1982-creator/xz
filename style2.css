@@ -1129,6 +1129,134 @@ body {
 
 
 /* новый блок */
+/* Блок 3 - Бегущая строка (быстрая прокрутка) */
+.marquee-section {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.marquee-container {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.marquee-info {
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem;
+    margin: 0.4rem -0.1rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee-track {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #0019FF;
+    border-radius: 1rem;
+    padding: 1.2rem 0;
+    box-shadow: 0 8px 25px rgba(0, 25, 255, 0.2);
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    /* Увеличил скорость - 20 секунд вместо 30 */
+    animation: marquee 120s linear infinite;
+    -webkit-animation: marquee 120s linear infinite;
+    -moz-animation: marquee 120s linear infinite;
+    -o-animation: marquee 120s linear infinite;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0 1.8rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.marquee-item:hover {
+    transform: scale(1.1);
+    color: #f0f2ff;
+}
+
+/* Анимация бегущей строки с увеличенной скоростью */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-50%);
+    }
+}
+
+@-moz-keyframes marquee {
+    0% {
+        -moz-transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(-50%);
+    }
+}
+
+@-o-keyframes marquee {
+    0% {
+        -o-transform: translateX(0);
+    }
+    100% {
+        -o-transform: translateX(-50%);
+    }
+}
+
+/* Пауза при наведении */
+.marquee-track:hover .marquee-content {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
 /* Блок 3 - Бегущая строка (маленькие отступы внутри) */
 .marquee-section {
     padding-bottom: 5rem;
@@ -1235,6 +1363,11 @@ body {
         font-size: 1rem;
         padding: 0 1.2rem;
     }
+    
+    /* Увеличиваем скорость в 2 раза на мобильных */
+    .marquee-content {
+        animation: marquee 5s linear infinite; /* 30s / 2 = 15s */
+    }
 }
 
 @media (max-width: 30rem) {
@@ -1251,6 +1384,11 @@ body {
     .marquee-item {
         font-size: 0.9rem;
         padding: 0 1rem;
+    }
+    
+    /* На очень маленьких экранах тоже ускоренная скорость */
+    .marquee-content {
+        animation: marquee 5s linear infinite;
     }
 }
 
@@ -1276,7 +1414,3 @@ body {
         font-size: 1rem;
     }
 }
-
-
-
-
