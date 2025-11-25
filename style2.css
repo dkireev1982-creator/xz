@@ -1126,3 +1126,157 @@ body {
         animation: none;
     }
 }
+
+
+/* новый блок */
+/* Блок 3 - Бегущая строка (маленькие отступы внутри) */
+.marquee-section {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.marquee-container {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0rem auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    animation: containerSlide 0.6s ease-out 0.1s both;
+}
+
+.marquee-info {
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 2rem 3rem; /* Маленькие отступы внутри */
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem; /* Компактная высота */
+    margin: 0.4rem -0.1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: scaleIn 0.8s ease-out 0.3s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee-track {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #0019FF;
+    border-radius: 1rem;
+    padding: 1.2rem 0; /* Компактные отступы */
+    box-shadow: 0 8px 25px rgba(0, 25, 255, 0.2);
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem; /* Нормальный размер шрифта */
+    font-weight: 600;
+    color: #fff;
+    padding: 0 1.8rem; /* Компактные отступы */
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.marquee-item:hover {
+    transform: scale(1.1);
+    color: #f0f2ff;
+}
+
+/* Анимация бегущей строки */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Пауза при наведении */
+.marquee-track:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Адаптивность */
+@media (max-width: 48rem) {
+    .marquee-info {
+        padding: 1.5rem 1.5rem;
+        min-height: 6rem;
+    }
+    
+    .marquee-track {
+        padding: 1rem 0;
+        border-radius: 0.8rem;
+    }
+    
+    .marquee-item {
+        font-size: 1rem;
+        padding: 0 1.2rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .marquee-info {
+        padding: 1rem 1rem;
+        min-height: 5rem;
+    }
+    
+    .marquee-track {
+        padding: 0.8rem 0;
+        border-radius: 0.6rem;
+    }
+    
+    .marquee-item {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Отключение анимации для пользователей с prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-container,
+    .marquee-info {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .marquee-content {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .marquee-item {
+        padding: 0.4rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+
+
