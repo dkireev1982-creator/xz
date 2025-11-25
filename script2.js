@@ -84,3 +84,214 @@ document.addEventListener('DOMContentLoaded', function() {
             // Инициализируем состояние при загрузке
             handleHeaderScroll();
         });
+
+
+// Или с проверкой на главную страницу
+document.addEventListener('DOMContentLoaded', function() {
+    const logoLink = document.querySelector('.logo-link');
+    
+    if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+            // Если мы на главной странице
+            if (window.location.pathname === '/' || 
+                window.location.pathname.includes('index.html')) {
+                e.preventDefault();
+                
+                // Плавная прокрутка к верху
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            // Если не на главной - переход на главную произойдет по ссылке
+        });
+    }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const courseButtons = document.querySelectorAll('.select-course-btn');
+    
+    courseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const courseType = this.getAttribute('data-course');
+            const courseName = courseType === 'oge' ? 'ОГЭ' : 'ЕГЭ';
+            
+            // Показываем подтверждение выбора
+            if (confirm(`Вы выбрали подготовку к ${courseName}. Перейти к оформлению?`)) {
+                // Здесь можно добавить переход к форме заявки
+                window.location.href = `application.html?course=${courseType}`;
+            }
+        });
+    });
+    
+    // Анимация появления элементов
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Наблюдаем за элементами для анимации появления
+    document.querySelectorAll('.course-option, .advantage-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const heroImage = document.querySelector('.courses-hero__info img');
+    const glows = document.querySelectorAll('.image-glow');
+    
+    // Убираем параллакс если он вызывает проблемы, оставляем только hover
+    if (heroImage) {
+        heroImage.addEventListener('mouseenter', function() {
+            this.style.animation = 'imageFloat 3s ease-in-out infinite';
+            this.style.transform = 'scale(1.03)';
+        });
+        
+        heroImage.addEventListener('mouseleave', function() {
+            this.style.animation = 'imageFloat 4s ease-in-out 1.5s infinite';
+            this.style.transform = 'scale(1)';
+        });
+    }
+    
+    // Эффект наведения на кнопку
+    const heroBtn = document.querySelector('.courses-hero__btn');
+    if (heroBtn) {
+        heroBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-0.25rem) scale(1.05)';
+        });
+        
+        heroBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    }
+});
+
+
+
+
+
+
+class ScrollCounter {
+    constructor() {
+        this.counters = [];
+        this.observer = null;
+        this.init();
+    }
+    
+    init() {
+        this.getCounters();
+        this.setupObserver();
+    }
+    
+    getCounters() {
+        const counterElements = document.querySelectorAll('.stat-number');
+        counterElements.forEach(counter => {
+            this.counters.push({
+                element: counter,
+                target: parseInt(counter.getAttribute('data-target')),
+                counted: false,
+                current: 0
+            });
+        });
+    }
+    
+    setupObserver() {
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.startCounting();
+                } else {
+                    this.resetCounters();
+                }
+            });
+        }, { 
+            threshold: 0.6,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            this.observer.observe(statsSection);
+        }
+    }
+    
+    resetCounters() {
+        this.counters.forEach(counter => {
+            counter.counted = false;
+            counter.current = 0;
+            counter.element.textContent = '0';
+            counter.element.classList.remove('counting');
+        });
+    }
+    
+    startCounting() {
+        this.counters.forEach((counter, index) => {
+            if (!counter.counted) {
+                setTimeout(() => {
+                    this.animateCounterWithEase(counter);
+                }, index * 400);
+            }
+        });
+    }
+    
+    animateCounterWithEase(counter) {
+        const element = counter.element;
+        const target = counter.target;
+        const duration = 2000;
+        let startTime = null;
+        
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+        
+        const updateCounter = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easedProgress = easeOutQuart(progress);
+            
+            // Замедление в последних 30%
+            let currentProgress = progress;
+            if (progress > 0.7) {
+                const slowDownFactor = 0.3;
+                currentProgress = 0.7 + (progress - 0.7) * slowDownFactor;
+            }
+            
+            const currentValue = Math.floor(easedProgress * target);
+            element.textContent = currentValue;
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+                element.classList.add('counting');
+                counter.counted = true;
+                counter.current = target;
+            }
+        };
+        
+        requestAnimationFrame(updateCounter);
+    }
+}
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', function() {
+    new ScrollCounter();
+});

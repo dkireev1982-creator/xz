@@ -421,3 +421,42 @@ function initCourseSwitch() {
             // Инициализируем состояние при загрузке
             handleHeaderScroll();
         });
+
+        function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Или с проверкой на главную страницу
+document.addEventListener('DOMContentLoaded', function() {
+    const logoLink = document.querySelector('.logo-link');
+    
+    if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+            // Если мы на главной странице
+            if (window.location.pathname === '/' || 
+                window.location.pathname.includes('index.html')) {
+                e.preventDefault();
+                
+                // Плавная прокрутка к верху
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            // Если не на главной - переход на главную произойдет по ссылке
+        });
+    }
+});
+
+
+
+
+document.getElementById('exam-input').addEventListener('input', function(e) {
+    // Неправильная валидация, которая блокирует выбор
+    if (e.target.value !== 'ОГЭ' && e.target.value !== 'ЕГЭ') {
+        e.target.value = ''; // Сбрасывает значение
+    }
+});
