@@ -1466,7 +1466,7 @@ body {
             font-family: "Montserrat", sans-serif;
             font-size: 2.5rem;
             font-weight: 800;
-            color: #1a202c;
+            color: #770cf1;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
@@ -1535,7 +1535,7 @@ body {
         .oge-head-content img {
             width: 100%;
             max-width: 16rem;
-            height: 11rem;
+            height: 16rem;
             object-fit: cover;
             border-radius: 1rem;
         }
@@ -1557,7 +1557,7 @@ body {
             letter-spacing: 0.13em;
             text-transform: uppercase;
             text-align: center;
-            color: #000;
+            color: #000000;
             line-height: 1.3;
             margin: 0;
         }
@@ -1803,3 +1803,190 @@ body {
                 transform: none;
             }
         }
+
+
+
+.clean-timer-section {
+    padding-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.clean-timer-container {
+    padding-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.clean-timer-info {
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 7rem;
+    margin: 0.4rem -0.1rem;
+    box-sizing: border-box;
+}
+
+.clean-timer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Левая часть - текст */
+.clean-text {
+    flex: 1;
+}
+
+.clean-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7C3AED;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* Правая часть - черный таймер с секундами */
+.clean-timer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.clean-time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.clean-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.clean-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #666666;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.clean-colon {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .clean-timer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .clean-title {
+        font-size: 1.8rem;
+    }
+    
+    .clean-timer {
+        gap: 0.8rem;
+    }
+    
+    .clean-number {
+        font-size: 1.8rem;
+        min-width: 2.2rem;
+    }
+    
+    .clean-colon {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .clean-timer-info {
+        padding: 1.5rem 2rem;
+        min-height: 6rem;
+    }
+    
+    .clean-title {
+        font-size: 1.6rem;
+    }
+    
+    .clean-timer {
+        gap: 0.6rem;
+    }
+    
+    .clean-number {
+        font-size: 1.6rem;
+        min-width: 2rem;
+    }
+    
+    .clean-label {
+        font-size: 0.65rem;
+    }
+    
+    .clean-colon {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .clean-timer-info {
+        padding: 1.2rem 1.5rem;
+        border-radius: 1.5rem;
+        min-height: 5rem;
+    }
+    
+    .clean-title {
+        font-size: 1.4rem;
+    }
+    
+    .clean-timer {
+        gap: 0.5rem;
+    }
+    
+    .clean-number {
+        font-size: 1.3rem;
+        min-width: 1.6rem;
+    }
+    
+    .clean-label {
+        font-size: 0.6rem;
+    }
+    
+    .clean-colon {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+    }
+}       
+        

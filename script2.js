@@ -295,3 +295,73 @@ class ScrollCounter {
 document.addEventListener('DOMContentLoaded', function() {
     new ScrollCounter();
 });
+
+
+
+
+
+
+
+
+
+
+console.log('🕒 Таймер ОГЭ запускается...');
+
+function startTimer() {
+    const days = document.getElementById('days');
+    const hours = document.getElementById('hours');
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
+    
+    console.log('Найдены элементы:', days, hours, minutes, seconds);
+    
+    if (!days || !hours || !minutes || !seconds) {
+        console.log('❌ Элементы не найдены, пробуем снова...');
+        setTimeout(startTimer, 100);
+        return;
+    }
+    
+    console.log('✅ Таймер запущен!');
+    
+    // Устанавливаем дату на 26 дней вперед от текущей даты
+    const examDate = new Date();
+    examDate.setDate(examDate.getDate() + 26);
+    examDate.setHours(0, 0, 0, 0);
+    
+    console.log('Дата экзамена:', examDate);
+    
+    function updateTimer() {
+        const now = new Date();
+        const timeLeft = examDate - now;
+        
+        console.log('Осталось времени:', timeLeft);
+        
+        if (timeLeft > 0) {
+            const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            days.textContent = daysLeft.toString().padStart(2, '0');
+            hours.textContent = hoursLeft.toString().padStart(2, '0');
+            minutes.textContent = minutesLeft.toString().padStart(2, '0');
+            seconds.textContent = secondsLeft.toString().padStart(2, '0');
+            
+            console.log(`Осталось: ${daysLeft}д ${hoursLeft}ч ${minutesLeft}м ${secondsLeft}с`);
+        } else {
+            // Время вышло
+            days.textContent = '00';
+            hours.textContent = '00';
+            minutes.textContent = '00';
+            seconds.textContent = '00';
+            console.log('⏰ Время вышло!');
+        }
+    }
+    
+    // Запускаем сразу и каждую секунду
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// Запускаем таймер
+startTimer();
