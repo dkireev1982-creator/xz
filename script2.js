@@ -365,3 +365,128 @@ function startTimer() {
 
 // Запускаем таймер
 startTimer();
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const points = {
+        math: 0,
+        physics: 0,
+        chemistry: 0,
+        biology: 0,
+        russian: 0,
+        social: 0
+    };
+
+    const steps = document.querySelectorAll('.test-step');
+    const options = document.querySelectorAll('.test-option');
+    const progressFill = document.getElementById('testProgressFill');
+    const progressText = document.getElementById('testProgressText');
+    const resultSubject = document.getElementById('testResultSubject');
+    const restartBtn = document.getElementById('testRestartBtn');
+    const chooseBtn = document.getElementById('testChooseBtn');
+
+    let currentStep = 0;
+
+    const subjects = {
+        math: {
+            name: 'Математика',
+            desc: 'Точные науки и вычисления',
+            color: '#0019FF'
+        },
+        physics: {
+            name: 'Физика',
+            desc: 'Законы природы и явления',
+            color: '#7C3AED'
+        },
+        chemistry: {
+            name: 'Химия',
+            desc: 'Вещества и реакции',
+            color: '#7700FF'
+        },
+        biology: {
+            name: 'Биология',
+            desc: 'Живые организмы и природа',
+            color: '#00C851'
+        },
+        russian: {
+            name: 'Русский язык',
+            desc: 'Грамотность и тексты',
+            color: '#FF6B6B'
+        },
+        social: {
+            name: 'Обществознание',
+            desc: 'Общество и право',
+            color: '#FFA726'
+        }
+    };
+
+    function updateProgress() {
+        const progress = ((currentStep + 1) / 3) * 100;
+        progressFill.style.width = `${progress}%`;
+        progressText.textContent = `${currentStep + 1} из 3`;
+    }
+
+    function goToStep(stepIndex) {
+        steps.forEach(step => step.classList.remove('active'));
+        steps[stepIndex].classList.add('active');
+        currentStep = stepIndex;
+        updateProgress();
+    }
+
+    function calculateResult() {
+        let maxPoints = 0;
+        let bestSubject = 'math';
+        
+        for (const subject in points) {
+            if (points[subject] > maxPoints) {
+                maxPoints = points[subject];
+                bestSubject = subject;
+            }
+        }
+        
+        if (maxPoints === 0) {
+            bestSubject = 'math';
+        }
+        
+        const subject = subjects[bestSubject];
+        resultSubject.innerHTML = `
+            <div class="test-subject-name" style="color: ${subject.color}">${subject.name}</div>
+            <div class="test-subject-desc">${subject.desc}</div>
+        `;
+    }
+
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const pointsToAdd = this.getAttribute('data-points').split('-');
+            pointsToAdd.forEach(subject => {
+                if (points[subject] !== undefined) {
+                    points[subject]++;
+                }
+            });
+            
+            if (currentStep < 2) {
+                goToStep(currentStep + 1);
+            } else {
+                calculateResult();
+                goToStep(3);
+            }
+        });
+    });
+
+    restartBtn.addEventListener('click', function() {
+        for (const subject in points) {
+            points[subject] = 0;
+        }
+        goToStep(0);
+    });
+
+    chooseBtn.addEventListener('click', function() {
+        const subjectName = resultSubject.querySelector('.test-subject-name').textContent;
+        alert(`Отлично! Вы выбрали "${subjectName}". Переходите к курсам подготовки!`);
+    });
+
+    updateProgress();
+});

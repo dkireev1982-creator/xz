@@ -1989,4 +1989,1433 @@ body {
         margin-bottom: 0.2rem;
     }
 }       
-        
+ 
+
+
+
+.schedule-section {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.schedule-container {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0rem auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    animation: containerSlide 0.6s ease-out 0.1s both;
+}
+
+/* Контейнер для 3 блоков */
+.schedule-blocks-exact {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+/* Общие стили для карточек */
+.schedule-block-exact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 1.8rem 1.2rem;
+    min-height: 10rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.schedule-block-exact:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.schedule-block-exact:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.schedule-block-exact:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Основная строка (синяя, жирная) */
+.main-line {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #0019FF;
+}
+
+/* Вторая строка (меньше, серый) */
+.sub-line {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #4a5568;
+    line-height: 1.3;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .schedule-blocks-exact {
+        gap: 1.2rem;
+    }
+    
+    .schedule-block-exact {
+        padding: 1.5rem 1rem;
+        min-height: 9rem;
+        border-radius: 1.2rem;
+    }
+    
+    .main-line {
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .sub-line {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .schedule-section {
+        padding: 0 1rem;
+    }
+    
+    .schedule-container {
+        padding: 0;
+    }
+    
+    .schedule-blocks-exact {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .schedule-block-exact {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        min-height: 8rem;
+        border-radius: 1.2rem;
+    }
+    
+    .main-line {
+        font-size: 1.7rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .sub-line {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-section {
+        padding: 0 0.75rem;
+    }
+    
+    .schedule-blocks-exact {
+        gap: 0.9rem;
+    }
+    
+    .schedule-block-exact {
+        padding: 1.2rem 0.9rem;
+        min-height: 7.5rem;
+        border-radius: 1rem;
+    }
+    
+    .main-line {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .sub-line {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .schedule-section {
+        padding: 0 0.5rem;
+    }
+    
+    .schedule-block-exact {
+        padding: 1rem 0.8rem;
+        min-height: 7rem;
+    }
+    
+    .main-line {
+        font-size: 1.4rem;
+    }
+    
+    .sub-line {
+        font-size: 0.85rem;
+    }
+}
+
+/* Отключение анимаций для пользователей с prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .schedule-container {
+        animation: none;
+    }
+    
+    .schedule-block-exact {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+.ege-courses-section {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.ege-courses-container {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0rem auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+/* Только заголовок в белой блажке */
+.ege-courses-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    position: relative;
+    z-index: 2;
+}
+
+.ege-courses-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #7C3AED;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.ege-courses-subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: #4a5568;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Сетка карточек */
+.ege-courses-block {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Карточка курса ЕГЭ */
+.ege-courses-block .ege-course-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem;
+    border-radius: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 25, 255, 0.1);
+}
+
+.ege-courses-block .ege-course-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 2rem rgba(0, 25, 255, 0.15);
+}
+
+.ege-courses-block .ege-course-card .ege-course-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* Верхняя часть карточки */
+.ege-courses-block .ege-course-card .ege-course-content .ege-head-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    align-self: center;
+}
+
+.ege-head-content img {
+    width: 100%;
+    max-width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.ege-head-content h2 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #0019ff;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ege-head-content p {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Основной контент */
+.ege-main-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    background-color: #f5f5f5;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ege-main-content p {
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #969696;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Кнопка */
+.ege-course-content button {
+    width: 100%;
+    height: auto;
+    min-height: 4rem;
+    border-radius: 1.5rem;
+    border: none;
+    background-color: #0019FF;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    margin-top: auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+.ege-course-content button:hover {
+    background-color: #5622ff;
+}
+
+/* Адаптивность с правильным scale */
+@media (max-width: 1024px) {
+    .ege-courses-block {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .ege-courses-header {
+        padding: 2rem 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .ege-courses-title {
+        font-size: 2.2rem;
+    }
+    
+    .ege-courses-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ege-courses-section {
+        padding: 0 1rem;
+        margin-top: 1rem;
+    }
+    
+    .ege-courses-container {
+        padding: 0;
+    }
+    
+    .ege-courses-header {
+        padding: 1.5rem 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 1.5rem;
+    }
+    
+    .ege-courses-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .ege-courses-subtitle {
+        font-size: 1rem;
+    }
+    
+    .ege-courses-block {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .ege-courses-block .ege-course-card {
+        padding: 1.25rem 1.25rem;
+        border-radius: 1.5rem;
+    }
+    
+    .ege-head-content img {
+        height: 10rem;
+        max-width: 14rem;
+    }
+    
+    .ege-head-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .ege-head-content p {
+        font-size: 1rem;
+    }
+    
+    .ege-main-content {
+        padding: 1.25rem 0.8rem;
+        gap: 0.7rem;
+    }
+    
+    .ege-main-content p {
+        font-size: 0.85rem;
+    }
+    
+    .ege-course-content button {
+        min-height: 3.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ege-courses-section {
+        padding: 0 0.75rem;
+    }
+    
+    .ege-courses-header {
+        padding: 1.25rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1.2rem;
+    }
+    
+    .ege-courses-title {
+        font-size: 1.6rem;
+    }
+    
+    .ege-courses-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .ege-courses-block {
+        gap: 1rem;
+    }
+    
+    .ege-courses-block .ege-course-card {
+        padding: 1rem 1rem;
+        border-radius: 1.2rem;
+    }
+    
+    .ege-courses-block .ege-course-card .ege-course-content {
+        gap: 1rem;
+    }
+    
+    .ege-head-content {
+        gap: 0.8rem;
+    }
+    
+    .ege-head-content img {
+        height: 9rem;
+        max-width: 12rem;
+    }
+    
+    .ege-head-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .ege-head-content p {
+        font-size: 0.9rem;
+    }
+    
+    .ege-main-content {
+        padding: 1rem 0.6rem;
+        gap: 0.6rem;
+        border-radius: 0.8rem;
+    }
+    
+    .ege-main-content p {
+        font-size: 0.8rem;
+    }
+    
+    .ege-course-content button {
+        min-height: 3rem;
+        font-size: 0.9rem;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .ege-courses-section {
+        padding: 0 0.5rem;
+    }
+    
+    .ege-courses-header {
+        padding: 1rem 0.8rem;
+    }
+    
+    .ege-courses-title {
+        font-size: 1.4rem;
+    }
+    
+    .ege-courses-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .ege-head-content img {
+        height: 8rem;
+        max-width: 10rem;
+    }
+    
+    .ege-head-content h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Отключение анимаций для пользователей с prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .ege-courses-block .ege-course-card {
+        transition: none;
+    }
+    
+    .ege-courses-block .ege-course-card:hover {
+        transform: none;
+    }
+    
+    .ege-course-content button:hover {
+        transform: none;
+    }
+}
+
+
+
+
+.test-with-image-section {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.test-with-image-container {
+    padding-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0rem auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    animation: containerSlide 0.6s ease-out 0.1s both;
+}
+
+.test-with-image-info {
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    display: flex;
+    align-items: stretch;
+    min-height: 32rem;
+    margin: 0.4rem -0.1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: scaleIn 0.8s ease-out 0.3s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Левая часть: тест */
+.test-left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 3rem;
+    border-right: 1px solid #e5e7eb;
+}
+
+.test-header {
+    margin-bottom: 2rem;
+}
+
+.test-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #7C3AED;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.test-subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 500px;
+    font-weight: 500;
+}
+
+.test-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.test-step {
+    display: none;
+}
+
+.test-step.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.test-question {
+    margin-bottom: 2rem;
+}
+
+.test-question-number {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    background: #0019FF;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.test-question-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.test-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.test-option {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.9rem;
+    background: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a202c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.test-option:hover {
+    border-color: #0019FF;
+    background: rgba(0, 25, 255, 0.03);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 25, 255, 0.1);
+}
+
+/* Результат */
+.test-result {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.test-result-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.test-result-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 2rem;
+}
+
+.test-result-subject {
+    background: #f8fafc;
+    border-radius: 1.2rem;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+}
+
+.test-subject-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0019FF;
+    margin-bottom: 0.5rem;
+}
+
+.test-subject-desc {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.test-result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.test-action-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #0019FF;
+    background: white;
+    color: #0019FF;
+    min-width: 120px;
+}
+
+.test-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 25, 255, 0.1);
+}
+
+.test-action-btn.primary {
+    background: #0019FF;
+    color: white;
+}
+
+.test-action-btn.primary:hover {
+    background: #5622ff;
+}
+
+/* Прогресс */
+.test-progress {
+    margin-top: 2rem;
+}
+
+.test-progress-bar {
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.test-progress-fill {
+    height: 100%;
+    background: #0019FF;
+    border-radius: 2px;
+    width: 33%;
+    transition: width 0.3s ease;
+}
+
+.test-progress-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* Правая часть: чистая картинка */
+.image-right-side {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 26rem;
+}
+
+.test-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Картинка полностью видна без обрезки */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Анимации */
+@keyframes containerSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .test-with-image-info {
+        padding: 2.5rem 3rem;
+    }
+    
+    .test-left-side {
+        padding-right: 2rem;
+    }
+    
+    .image-right-side {
+        padding-left: 2rem;
+    }
+    
+    .image-container {
+        min-height: 24rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .test-with-image-info {
+        flex-direction: column;
+        padding: 2rem;
+        min-height: auto;
+    }
+    
+    .test-left-side {
+        padding-right: 0;
+        padding-bottom: 2rem;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .image-right-side {
+        padding-left: 0;
+        padding-top: 2rem;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .image-container {
+        min-height: 20rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .test-title {
+        font-size: 2rem;
+    }
+    
+    .test-question-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .test-with-image-section {
+        padding: 0 1rem;
+    }
+    
+    .test-with-image-container {
+        padding: 0;
+    }
+    
+    .test-with-image-info {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+    
+    .test-title {
+        font-size: 1.8rem;
+    }
+    
+    .test-subtitle {
+        font-size: 1rem;
+    }
+    
+    .test-question-text {
+        font-size: 1.2rem;
+    }
+    
+    .test-option {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .test-result-title {
+        font-size: 1.5rem;
+    }
+    
+    .test-result-subject {
+        padding: 1.5rem;
+    }
+    
+    .test-subject-name {
+        font-size: 1.8rem;
+    }
+    
+    .test-subject-desc {
+        font-size: 1rem;
+    }
+    
+    .test-action-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+        min-width: 110px;
+    }
+    
+    .image-container {
+        min-height: 18rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .test-with-image-info {
+        padding: 1.2rem;
+        border-radius: 1.2rem;
+    }
+    
+    .test-title {
+        font-size: 1.6rem;
+    }
+    
+    .test-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .test-question-text {
+        font-size: 1.1rem;
+    }
+    
+    .test-option {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.9rem;
+    }
+    
+    .test-result-title {
+        font-size: 1.4rem;
+    }
+    
+    .test-result-subject {
+        padding: 1.2rem;
+    }
+    
+    .test-subject-name {
+        font-size: 1.6rem;
+    }
+    
+    .test-subject-desc {
+        font-size: 0.9rem;
+    }
+    
+    .test-action-btn {
+        width: 100%;
+        max-width: 150px;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .test-result-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .image-container {
+        min-height: 16rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .test-with-image-container,
+    .test-with-image-info {
+        animation: none !important;
+        opacity: 1;
+    }
+    
+    .test-step.active {
+        animation: none !important;
+    }
+    
+    .test-option,
+    .test-action-btn {
+        transition: none !important;
+    }
+    
+    .test-option:hover,
+    .test-action-btn:hover {
+        transform: none !important;
+    }
+}
+
+
+
+
+
+
+
+/* Подвал */
+/* Стили для подвала */
+.footer-section {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+}
+
+.footer-block {
+    width: 100%;
+    background: #fff;
+    border-radius: 1.5rem; /* Меньшее скругление */
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.footer-brand {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    filter: drop-shadow(0 4px 12px rgba(0, 25, 255, 0.1));
+}
+
+.footer-tagline {
+    color: #4a5568;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #8C4FF4;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-btn {
+    padding: 1rem 2rem;
+    background: #8C4FF4;
+    color: #fff;
+    border: none;
+    border-radius: 1.5625rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem rgba(59, 59, 59, 0.29);
+}
+
+.footer-btn:hover {
+    background: #7C3AED;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #718096;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.legal-links a {
+    color: #718096;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #8C4FF4;
+}
+
+/* Подсветки для подвала */
+.footer-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(3rem);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.footer-glow.glow-1 {
+    width: 8rem;
+    height: 8rem;
+    background: linear-gradient(45deg, #8CAFF4, #8C4FF4);
+    bottom: 10%;
+    left: 5%;
+}
+
+.footer-glow.glow-2 {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, #8C4FF4, #4FF48C);
+    top: 20%;
+    right: 10%;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-section {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Адаптивность */
+@media (max-width: 75rem) {
+    .footer-block {
+        padding: 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 64rem) {
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        flex: 0 0 100%;
+        align-items: center;
+    }
+    
+    .footer-nav {
+        order: 3;
+        flex: 0 0 100%;
+        justify-content: center;
+    }
+    
+    .footer-contacts {
+        order: 2;
+    }
+}
+
+@media (max-width: 56.25rem) {
+    .footer-section {
+        margin-top: 1.5rem;
+    }
+    
+    .footer-block {
+        padding: 1.5rem 1rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .footer-nav {
+        order: 2;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .footer-contacts {
+        order: 3;
+    }
+    
+    .footer-btn {
+        order: 4;
+    }
+    
+    .footer-bottom {
+        padding-top: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 48rem) {
+    .footer-section {
+        margin-top: 1rem;
+    }
+    
+    .footer-block {
+        padding: 1.25rem 1rem;
+        border-radius: 1.25rem;
+    }
+    
+    .footer-content {
+        gap: 1.25rem;
+    }
+    
+    .footer-nav {
+        gap: 0.8rem;
+    }
+    
+    .footer-link {
+        font-size: 0.9rem;
+    }
+    
+    .footer-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .footer-section {
+        margin-top: 0.5rem;
+    }
+    
+    .footer-block {
+        padding: 1rem 0.75rem;
+        border-radius: 1rem;
+    }
+    
+    .footer-content {
+        gap: 1rem;
+    }
+    
+    .footer-logo {
+        width: 180px;
+        height: 50px;
+    }
+    
+    .footer-tagline {
+        font-size: 0.85rem;
+    }
+    
+    .footer-nav {
+        gap: 0.6rem;
+    }
+    
+    .footer-link {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .footer-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 1.25rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .legal-links a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 22.5rem) {
+    .footer-block {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .footer-content {
+        gap: 0.8rem;
+    }
+    
+    .footer-nav {
+        gap: 0.4rem;
+    }
+    
+    .footer-link {
+        font-size: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-section {
+        animation: none;
+    }
+    
+    .footer-link,
+    .footer-btn {
+        transition: none;
+    }
+}
+
