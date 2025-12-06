@@ -708,7 +708,7 @@ body {
         .glow-2 {
             width: 6.25rem;
             height: 6.25rem;
-            background: linear-gradient(135deg, #8C4FF4, #4FF48C);
+            background: linear-gradient(135deg, #8C4FF4, #4f60f4);
             top: 50%;
             right: 15%;
             transform: translateY(-50%);
