@@ -4390,6 +4390,9 @@ body {
         padding: 0 0.5rem;
         margin: 1rem auto;
     }
+    .bottom-badge {
+        display: none !important;
+    }
     
     .intro-info {
         padding: 2rem 1rem;
@@ -4476,6 +4479,7 @@ body {
         padding: 1.8rem 0.75rem;
         border-radius: 0.8rem;
         margin-top: 1.2rem;
+        padding-bottom: 1.5rem; /* Уменьшаем нижний отступ */
     }
     
     .main-title {
@@ -4523,6 +4527,7 @@ body {
         max-width: 220px;
         border-radius: 0.6rem;
         line-height: 1.2;
+        margin-bottom: 0.3rem; /* Уменьшаем отступ снизу */
     }
     
     /* БЕЙДЖИ ДЛЯ 360px - ПРОПОРЦИОНАЛЬНО УМЕНЬШЕНЫ */
@@ -4543,21 +4548,9 @@ body {
         box-shadow: 0 6px 20px rgba(124, 58, 237, 0.1);
     }
     
+    /* НИЖНИЙ БЕЙДЖ НА 360px И МЕНЬШЕ - СКРЫВАЕМ */
     .bottom-badge {
-        position: absolute;
-        bottom: -0.5rem;
-        left: 50%;
-        transform: translateX(-50%) rotate(1.5deg);
-        padding: 0.6rem 1rem;
-        max-width: 180px;
-        min-width: 140px;
-        border-radius: 0.8rem;
-        z-index: 100;
-        background: rgba(139, 92, 246, 0.14);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border: 1.5px solid rgba(124, 58, 237, 0.25);
-        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.1);
+        display: none !important;
     }
     
     .top-badge-text,
@@ -4572,12 +4565,24 @@ body {
     }
 }
 
+/* ТЕЛЕФОНЫ 375px - СКРЫВАЕМ НИЖНИЙ БЕЙДЖ */
+@media (max-width: 23.4375rem) { /* 375px */
+    .bottom-badge {
+        display: none !important; /* Скрываем бейдж на 375px */
+    }
+    
+    .intro-info {
+        padding-bottom: 1.8rem; /* Уменьшаем отступ снизу так как бейджа нет */
+    }
+}
+
 /* ОЧЕНЬ УЗКИЕ ЭКРАНЫ (320px и меньше) */
 @media (max-width: 20rem) { /* 320px */
     .intro-info {
         padding: 1.6rem 0.5rem;
         border-radius: 0.7rem;
         margin-top: 1.4rem;
+        padding-bottom: 1.5rem;
     }
     
     .main-title {
@@ -4603,6 +4608,7 @@ body {
         min-height: auto;
         max-width: 200px;
         border-radius: 0.5rem;
+        margin-bottom: 0.2rem;
     }
     
     /* Бейджи для 320px */
@@ -4615,12 +4621,9 @@ body {
         border-radius: 0.6rem;
     }
     
+    /* Нижний бейдж уже скрыт на 375px и 360px */
     .bottom-badge {
-        max-width: 150px;
-        min-width: 120px;
-        padding: 0.5rem 0.8rem;
-        bottom: -0.4rem;
-        border-radius: 0.6rem;
+        display: none !important;
     }
     
     .top-badge-text,
@@ -4681,6 +4684,7 @@ body {
     .intro-info {
         min-height: auto;
         padding: 1.5rem 1rem;
+        padding-bottom: 1.5rem;
     }
     
     .circles-block {
@@ -4695,6 +4699,7 @@ body {
     
     .circle-text {
         padding: 0.5rem;
+        margin-bottom: 0.3rem;
     }
     
     .top-badge {
@@ -4703,8 +4708,7 @@ body {
     }
     
     .bottom-badge {
-        bottom: -0.5rem;
-        padding: 0.5rem 0.9rem;
+        display: none !important;
     }
 }
 
