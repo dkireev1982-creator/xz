@@ -983,7 +983,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 115.1875rem;
-    margin: 0 auto;
+    margin:  0 auto;
     padding: 0 0.625rem;
     box-sizing: border-box;
     margin-top: 2rem;
@@ -2333,3 +2333,1354 @@ body {
         animation: none !important;
     }
 }
+
+
+
+
+
+
+
+
+
+/* Секция с карточками преподавателей */
+.teachers-section {
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 4rem auto 0;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+}
+
+/* Контейнер для карточек */
+.teachers-container {
+    width: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 4rem 3rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+/* Заголовок секции */
+.teachers-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #7C3AED;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    line-height: 1.3;
+}
+
+/* Контейнер для сетки карточек */
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* Карточка преподавателя */
+.teacher-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.1);
+}
+
+/* Контейнер для изображения */
+.teacher-image-container {
+    width: 100%;
+    height: 18rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.teacher-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.teacher-card:hover .teacher-image {
+    transform: scale(1.05);
+}
+
+/* Декоративная полоска */
+.teacher-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7C3AED, #8C4FF4);
+}
+
+/* Контент карточки */
+.teacher-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Имя и фамилия */
+.teacher-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2D3748;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+/* Предмет */
+.teacher-subject {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #7C3AED;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.teacher-subject::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #7C3AED;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Описание преподавателя */
+.teacher-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+/* Иконки навыков/специализации */
+.teacher-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-tag {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7C3AED;
+    padding: 0.375rem 0.875rem;
+    border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* Адаптивность для больших ноутбуков (1280-1440px) */
+@media (max-width: 1440px) {
+    .teachers-section {
+        max-width: 90rem;
+        padding: 0 1.5rem;
+    }
+    
+    .teachers-container {
+        padding: 3.5rem 2.5rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 2rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Адаптивность для стандартных ноутбуков (1024-1280px) */
+@media (max-width: 1280px) {
+    .teachers-section {
+        max-width: 80rem;
+        padding: 0 1.25rem;
+    }
+    
+    .teachers-container {
+        padding: 3rem 2rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+        gap: 1.75rem;
+    }
+    
+    .teacher-image-container {
+        height: 16rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.7rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.4rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1.05rem;
+    }
+}
+
+/* Адаптивность для небольших ноутбуков и планшетов (768-1024px) */
+@media (max-width: 1024px) {
+    .teachers-section {
+        max-width: 100%;
+        padding: 0 1rem;
+        margin-top: 3rem;
+    }
+    
+    .teachers-container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .teacher-image-container {
+        height: 15rem;
+    }
+    
+    .teacher-content {
+        padding: 1.5rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.3rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1rem;
+    }
+    
+    .teacher-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* Адаптивность для планшетов (600-768px) */
+@media (max-width: 768px) {
+    .teachers-section {
+        padding: 0 0.75rem;
+    }
+    
+    .teachers-container {
+        padding: 2rem 1.25rem;
+        border-radius: 1.2rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        max-width: 28rem;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 1.75rem;
+    }
+    
+    .teacher-image-container {
+        height: 16rem;
+    }
+    
+    .teacher-content {
+        padding: 1.25rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.25rem;
+    }
+    
+    .teacher-subject {
+        font-size: 0.95rem;
+    }
+    
+    .teacher-description {
+        font-size: 0.9rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
+
+/* Адаптивность для мобильных (480-600px) */
+@media (max-width: 600px) {
+    .teachers-section {
+        padding: 0 0.5rem;
+    }
+    
+    .teachers-container {
+        padding: 1.75rem 1rem;
+    }
+    
+    .teachers-grid {
+        gap: 1.25rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .teacher-image-container {
+        height: 14rem;
+    }
+    
+    .teacher-content {
+        padding: 1rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.2rem;
+    }
+    
+    .teacher-subject {
+        font-size: 0.9rem;
+    }
+    
+    .teacher-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Адаптивность для маленьких мобильных (до 480px) */
+@media (max-width: 480px) {
+    .teachers-container {
+        padding: 1.5rem 0.75rem;
+        border-radius: 1rem;
+    }
+    
+    .teachers-grid {
+        gap: 1rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.2rem;
+        letter-spacing: 0.04em;
+    }
+    
+    .teacher-image-container {
+        height: 12rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.1rem;
+    }
+    
+    .teacher-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Отключение анимаций для пользователей */
+@media (prefers-reduced-motion: reduce) {
+    .teachers-container {
+        animation: none !important;
+    }
+    
+    .teacher-card:hover {
+        transform: none;
+    }
+    
+    .teacher-card:hover .teacher-image {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+/* Секция с карточками преподавателей */
+.teachers-section {
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0.1rem auto 0;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фоновый градиент */
+.teachers-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+}
+
+/* Контейнер для карточек */
+.teachers-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 2.5rem;
+    padding: 5rem 3rem;
+    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.1),
+                0 8px 32px rgba(124, 58, 237, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: scaleIn 0.8s ease-out 0.3s both;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Убрал треугольник - удалил .teachers-container::before */
+
+/* Заголовок секции */
+.teachers-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #1E1B2E;
+    text-align: center;
+    margin: 0 0 4rem 0;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.teachers-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7C3AED, #8B5CF6, #A78BFA);
+    border-radius: 2px;
+    animation: underlineSlide 1s ease-out;
+}
+
+.teachers-title span {
+    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(124, 58, 237, 0.2);
+}
+
+/* Контейнер для сетки карточек */
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 3rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Карточка преподавателя */
+.teacher-card {
+    background: linear-gradient(145deg, #ffffff, #f8f7ff);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.08),
+                0 4px 16px rgba(124, 58, 237, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.teacher-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 24px 60px rgba(124, 58, 237, 0.15),
+                0 12px 32px rgba(124, 58, 237, 0.08),
+                0 4px 8px rgba(124, 58, 237, 0.04);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* Контейнер для изображения */
+.teacher-image-container {
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.teacher-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+    pointer-events: none;
+}
+
+.teacher-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1.02) contrast(1.05);
+}
+
+.teacher-card:hover .teacher-image {
+    transform: scale(1.1);
+}
+
+/* Флаг преподавателя */
+.teacher-flag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #7C3AED;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+}
+
+/* Контент карточки */
+.teacher-content {
+    padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Имя и фамилия */
+.teacher-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #1E1B2E;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Предмет */
+.teacher-subject {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #7C3AED;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.teacher-subject::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+/* Описание преподавателя */
+.teacher-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: #4A5568;
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    flex: 1;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+/* Иконки навыков/специализации */
+.teacher-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(139, 92, 246, 0.1));
+    color: #7C3AED;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(139, 92, 246, 0.15));
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+/* Статистика */
+.teacher-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stat-value {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #7C3AED;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes underlineSlide {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ============ ИСПРАВЛЕННАЯ АДАПТИВНОСТЬ ============ */
+
+/* Адаптивность для больших экранов (1440px+) */
+@media (max-width: 1440px) {
+    .teachers-section {
+        max-width: 90rem;
+        padding: 0 1.5rem;
+    }
+    
+    .teachers-title {
+        font-size: 2.5rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2.5rem;
+    }
+    
+    .teacher-image-container {
+        height: 20rem;
+    }
+}
+
+/* Адаптивность для ноутбуков (1024-1440px) */
+@media (max-width: 1280px) {
+    .teachers-section {
+        max-width: 80rem;
+        padding: 0 1.25rem;
+    }
+    
+    .teachers-container {
+        padding: 4rem 2.5rem;
+    }
+    
+    .teachers-title {
+        font-size: 2.25rem;
+        margin-bottom: 3rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+        gap: 2rem;
+    }
+    
+    .teacher-image-container {
+        height: 18rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.6rem;
+    }
+}
+
+/* Адаптивность для планшетов (768-1024px) */
+@media (max-width: 1024px) {
+    .teachers-section {
+        margin-top: 4rem;
+        padding: 0 1rem;
+    }
+    
+    .teachers-container {
+        padding: 3.5rem 2rem;
+        border-radius: 2rem;
+    }
+    
+    .teachers-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+    
+    .teacher-image-container {
+        height: 16rem;
+    }
+    
+    .teacher-content {
+        padding: 2rem;
+    }
+}
+
+/* Адаптивность для мобильных (480-768px) */
+@media (max-width: 768px) {
+    .teachers-section {
+        padding: 0 0.75rem;
+        margin-top: 3rem;
+    }
+    
+    .teachers-container {
+        padding: 3rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        max-width: 26rem;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+    
+    .teacher-image-container {
+        height: 20rem;
+    }
+    
+    .teacher-content {
+        padding: 2rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.6rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1.15rem;
+    }
+}
+
+/* Адаптивность для маленьких мобильных (375-480px) */
+@media (max-width: 480px) {
+    .teachers-section {
+        padding: 0 0.5rem;
+        margin-top: 2.5rem;
+    }
+    
+    .teachers-container {
+        padding: 2.5rem 1.25rem;
+        border-radius: 1.25rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .teachers-grid {
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .teacher-image-container {
+        height: 18rem;
+    }
+    
+    .teacher-content {
+        padding: 1.75rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.4rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .teacher-description {
+        font-size: 1rem;
+        padding: 0.875rem 0;
+        margin-bottom: 1.25rem;
+    }
+    
+    .teacher-stats {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        gap: 1.25rem;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .teacher-skills {
+        gap: 0.5rem;
+    }
+    
+    .skill-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Адаптивность для очень маленьких экранов (до 375px) */
+@media (max-width: 375px) {
+    .teachers-section {
+        padding: 0 0.375rem;
+    }
+    
+    .teachers-container {
+        padding: 2rem 1rem;
+        border-radius: 1rem;
+    }
+    
+    .teachers-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.75rem;
+    }
+    
+    .teacher-image-container {
+        height: 16rem;
+    }
+    
+    .teacher-content {
+        padding: 1.5rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.25rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1rem;
+        padding-left: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .teacher-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .teacher-stats {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+    }
+}
+
+/* Отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+    .teachers-container {
+        animation: none;
+    }
+    
+    .teacher-card:hover {
+        transform: none;
+    }
+    
+    .teacher-card:hover .teacher-image {
+        transform: none;
+    }
+    
+    .teachers-section::before {
+        animation: none;
+    }
+    
+    .skill-tag:hover {
+        transform: none;
+    }
+}
+
+/* Улучшение для Safari */
+@supports (-webkit-touch-callout: none) {
+    .teachers-container {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    
+    .teacher-flag {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+}
+
+
+
+
+/* Подвал */
+/* Стили для подвала */
+.footer-section {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 115.1875rem;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+}
+
+.footer-block {
+    width: 100%;
+    background: #fff;
+    border-radius: 1.5rem; /* Меньшее скругление */
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 1.25rem #d9d9d95b;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.footer-brand {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    filter: drop-shadow(0 4px 12px rgba(0, 25, 255, 0.1));
+}
+
+.footer-tagline {
+    color: #4a5568;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #8C4FF4;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-btn {
+    padding: 1rem 2rem;
+    background: #8C4FF4;
+    color: #fff;
+    border: none;
+    border-radius: 1.5625rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.625rem rgba(59, 59, 59, 0.29);
+}
+
+.footer-btn:hover {
+    background: #7C3AED;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #718096;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.legal-links a {
+    color: #718096;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #8C4FF4;
+}
+
+/* Подсветки для подвала */
+.footer-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(3rem);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.footer-glow.glow-1 {
+    width: 8rem;
+    height: 8rem;
+    background: linear-gradient(45deg, #8CAFF4, #8C4FF4);
+    bottom: 10%;
+    left: 5%;
+}
+
+.footer-glow.glow-2 {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, #8C4FF4, #4FF48C);
+    top: 20%;
+    right: 10%;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-section {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Адаптивность */
+@media (max-width: 75rem) {
+    .footer-block {
+        padding: 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 64rem) {
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        flex: 0 0 100%;
+        align-items: center;
+    }
+    
+    .footer-nav {
+        order: 3;
+        flex: 0 0 100%;
+        justify-content: center;
+    }
+    
+    .footer-contacts {
+        order: 2;
+    }
+}
+
+@media (max-width: 56.25rem) {
+    .footer-section {
+        margin-top: 1.5rem;
+    }
+    
+    .footer-block {
+        padding: 1.5rem 1rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .footer-nav {
+        order: 2;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .footer-contacts {
+        order: 3;
+    }
+    
+    .footer-btn {
+        order: 4;
+    }
+    
+    .footer-bottom {
+        padding-top: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 48rem) {
+    .footer-section {
+        margin-top: 1rem;
+    }
+    
+    .footer-block {
+        padding: 1.25rem 1rem;
+        border-radius: 1.25rem;
+    }
+    
+    .footer-content {
+        gap: 1.25rem;
+    }
+    
+    .footer-nav {
+        gap: 0.8rem;
+    }
+    
+    .footer-link {
+        font-size: 0.9rem;
+    }
+    
+    .footer-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .footer-section {
+        margin-top: 0.5rem;
+    }
+    
+    .footer-block {
+        padding: 1rem 0.75rem;
+        border-radius: 1rem;
+    }
+    
+    .footer-content {
+        gap: 1rem;
+    }
+    
+    .footer-logo {
+        width: 180px;
+        height: 50px;
+    }
+    
+    .footer-tagline {
+        font-size: 0.85rem;
+    }
+    
+    .footer-nav {
+        gap: 0.6rem;
+    }
+    
+    .footer-link {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .footer-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 1.25rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .legal-links a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 22.5rem) {
+    .footer-block {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .footer-content {
+        gap: 0.8rem;
+    }
+    
+    .footer-nav {
+        gap: 0.4rem;
+    }
+    
+    .footer-link {
+        font-size: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-section {
+        animation: none;
+    }
+    
+    .footer-link,
+    .footer-btn {
+        transition: none;
+    }
+}
+
