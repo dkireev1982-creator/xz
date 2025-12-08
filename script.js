@@ -460,3 +460,22 @@ document.getElementById('exam-input').addEventListener('input', function(e) {
         e.target.value = ''; // Сбрасывает значение
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
