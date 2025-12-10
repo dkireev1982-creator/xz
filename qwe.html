@@ -683,7 +683,7 @@
                     <p class="description">
                         Бесплатно определим ваш уровень знаний и составим индивидуальный план подготовки к ЕГЭ
                     </p>
-                    <button class="start-btn">
+                    <button class="start-btn  open-company-modal">
                         Начать бесплатно
                     </button>
                 </div>
@@ -780,6 +780,113 @@
     <div class="footer-glow glow-1"></div>
     <div class="footer-glow glow-2"></div>
 </footer>
+
+
+
+
+<!-- Модальное окно -->
+    <div class="company-modal" id="companyModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="close-modal" id="closeModal">
+                    <i class="fas_fa-times">×</i>
+                </button>
+                <h2>Запись на <span>подготовку</span></h2>
+            </div>
+            
+            <div class="modal-body">
+                <form class="enrollment-form" id="enrollmentForm">
+                    <!-- Имя ребенка -->
+                    <div class="form-group">
+                        <label for="childName">Имя ребёнка</label>
+                        <input type="text" id="childName" class="form-control" placeholder="Введите имя ребёнка" required>
+                    </div>
+                    
+                    <!-- Телефон родителя -->
+                    <div class="form-group">
+                        <label for="parentPhone">Телефон родителя</label>
+                        <input type="tel" id="parentPhone" class="form-control" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                    
+                    <!-- КРУПНЫЕ КНОПКИ ОГЭ/ЕГЭ -->
+                    <div class="form-group">
+                        <label>Тип экзамена</label>
+                        <div class="exam-type-group">
+                            <div class="exam-type-options">
+                                <div class="exam-option">
+                                    <input type="radio" id="oge" name="examType" value="oge" required>
+                                    <label for="oge" class="exam-label">ОГЭ</label>
+                                </div>
+                                <div class="exam-option">
+                                    <input type="radio" id="ege" name="examType" value="ege" required>
+                                    <label for="ege" class="exam-label">ЕГЭ</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпадающий список предметов -->
+                    <div class="form-group">
+                        <label for="subject">Предмет</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="" disabled selected>Выберите предмет</option>
+                            <option value="math">Математика</option>
+                            <option value="russian">Русский язык</option>
+                            <option value="physics">Физика</option>
+                            <option value="informatics">Информатика</option>
+                            <option value="english">Английский язык</option>
+                            <option value="history">История</option>
+                            <option value="social">Обществознание</option>
+                            <option value="biology">Биология</option>
+                            <option value="chemistry">Химия</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Выпадающий список класса -->
+                    <div class="form-group">
+                        <label for="grade">Класс</label>
+                        <select id="grade" class="form-control" required>
+                            <option value="" disabled selected>Выберите класс</option>
+                            <option value="9">9 класс</option>
+                            <option value="10">10 класс</option>
+                            <option value="11">11 класс</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Выпадающий список формы обучения -->
+                    <div class="form-group">
+                        <label for="format">Формат обучения</label>
+                        <select id="format" class="form-control" required>
+                            <option value="" disabled selected>Выберите формат</option>
+                            <option value="individual">Индивидуальные занятия</option>
+                            <option value="group">Групповые занятия</option>
+                            <option value="online">Онлайн-курс</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Отправить заявку
+                    </button>
+                </form>
+                
+                <!-- Сообщение об успешной отправке -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Заявка отправлена!</h3>
+                    <p>Ваши данные успешно отправлены. Наш менеджер свяжется с вами в течение 2 часов для подтверждения записи.</p>
+                    <button class="success-btn" id="closeSuccess">
+                        Понятно
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>Нажимая кнопку "Отправить заявку", вы соглашаетесь с политикой конфиденциальности</p>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./asd.js"></script>
 </html>

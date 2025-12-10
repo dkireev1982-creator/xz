@@ -36,7 +36,7 @@
         </nav>
         
         <div class="application">
-            <button class="open-company-modal">Забронировать местJ</button>
+            <button class="open-company-modal">Забронировать место</button>
         </div>
         
         <!-- Бургер-меню -->
@@ -49,7 +49,7 @@
             <a href="index2.html" class="mobile-nav-link">Курсы</a>
             <a href="qwe.html" class="mobile-nav-link">Результаты учеников</a>
             <a href="index4.html" class="mobile-nav-link">О нас</a>
-            <button class="mobile-application-btn">Забронировать место</button>
+            <button class="open-company-modal">Забронировать место</button>
         </div>
     </header>
 </div>
@@ -72,7 +72,7 @@
                 <h2>Онлайн-подготовка к экзаменам</h2>
                 <h1>Начните путь к <span class="accent-text">100 баллам</span> уже сегодня</h1>
                 <p>Получите доступ ко всем курсам ОГЭ и ЕГЭ с пожизненной лицензией. Интерактивные материалы, поддержка преподавателей и гарантия результата.</p>
-                <button class="btn courses-hero__btn">Выбрать и купить курс</button>
+                <button class="btn courses-hero__btn open-company-modal">Выбрать и купить курс</button>
             </div>
             
             <div class="courses-hero__image">
@@ -162,7 +162,7 @@
                             <p>Индивидуальный подход</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                         <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
                 
@@ -182,7 +182,7 @@
                             <p>Пробные экзамены</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                        <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
                 
@@ -202,7 +202,7 @@
                             <p>Физические законы</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                         <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@
                             <p>Практические навыки</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                         <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
 
@@ -242,7 +242,7 @@
                             <p>Генетика и клетка</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                        <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
 
@@ -262,7 +262,7 @@
                             <p>Человек и культура</p>
                         </div>
                         
-                        <button>Записаться на курс</button>
+                         <button class="open-company-modal">Записаться на курс</button>
                     </div>
                 </div>
             </div>
@@ -357,7 +357,7 @@
                         <p>Индивидуальные консультации</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                     <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
             
@@ -377,7 +377,7 @@
                         <p>Пробные экзамены</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                     <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
             
@@ -397,7 +397,7 @@
                         <p>Решение сложных задач</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                     <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
 
@@ -417,7 +417,7 @@
                         <p>Практическая химия</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                     <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
 
@@ -437,7 +437,7 @@
                         <p>Генетические задачи</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                    <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
 
@@ -457,7 +457,7 @@
                         <p>Практические задания</p>
                     </div>
                     
-                    <button>Записаться на курс</button>
+                    <button class="open-company-modal">Записаться на курс</button>
                 </div>
             </div>
         </div>
@@ -625,6 +625,116 @@
     <div class="footer-glow glow-1"></div>
     <div class="footer-glow glow-2"></div>
 </footer>
+
+
+
+ <!-- Модальное окно -->
+    <div class="company-modal" id="companyModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="close-modal" id="closeModal">
+                    <i class="fas_fa-times">×</i>
+                </button>
+                <h2>Запись на <span>подготовку</span></h2>
+            </div>
+            
+            <div class="modal-body">
+                <form class="enrollment-form" id="enrollmentForm">
+                    <!-- Имя ребенка -->
+                    <div class="form-group">
+                        <label for="childName">Имя ребёнка</label>
+                        <input type="text" id="childName" class="form-control" placeholder="Введите имя ребёнка" required>
+                    </div>
+                    
+                    <!-- Телефон родителя -->
+                    <div class="form-group">
+                        <label for="parentPhone">Телефон родителя</label>
+                        <input type="tel" id="parentPhone" class="form-control" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                    
+                    <!-- КРУПНЫЕ КНОПКИ ОГЭ/ЕГЭ -->
+                    <div class="form-group">
+                        <label>Тип экзамена</label>
+                        <div class="exam-type-group">
+                            <div class="exam-type-options">
+                                <div class="exam-option">
+                                    <input type="radio" id="oge" name="examType" value="oge" required>
+                                    <label for="oge" class="exam-label">ОГЭ</label>
+                                </div>
+                                <div class="exam-option">
+                                    <input type="radio" id="ege" name="examType" value="ege" required>
+                                    <label for="ege" class="exam-label">ЕГЭ</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпадающий список предметов -->
+                    <div class="form-group">
+                        <label for="subject">Предмет</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="" disabled selected>Выберите предмет</option>
+                            <option value="math">Математика</option>
+                            <option value="russian">Русский язык</option>
+                            <option value="physics">Физика</option>
+                            <option value="informatics">Информатика</option>
+                            <option value="english">Английский язык</option>
+                            <option value="history">История</option>
+                            <option value="social">Обществознание</option>
+                            <option value="biology">Биология</option>
+                            <option value="chemistry">Химия</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Выпадающий список класса -->
+                    <div class="form-group">
+                        <label for="grade">Класс</label>
+                        <select id="grade" class="form-control" required>
+                            <option value="" disabled selected>Выберите класс</option>
+                            <option value="9">9 класс</option>
+                            <option value="10">10 класс</option>
+                            <option value="11">11 класс</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Выпадающий список формы обучения -->
+                    <div class="form-group">
+                        <label for="format">Формат обучения</label>
+                        <select id="format" class="form-control" required>
+                            <option value="" disabled selected>Выберите формат</option>
+                            <option value="individual">Индивидуальные занятия</option>
+                            <option value="group">Групповые занятия</option>
+                            <option value="online">Онлайн-курс</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Отправить заявку
+                    </button>
+                </form>
+                
+                <!-- Сообщение об успешной отправке -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Заявка отправлена!</h3>
+                    <p>Ваши данные успешно отправлены. Наш менеджер свяжется с вами в течение 2 часов для подтверждения записи.</p>
+                    <button class="success-btn" id="closeSuccess">
+                        Понятно
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>Нажимая кнопку "Отправить заявку", вы соглашаетесь с политикой конфиденциальности</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 </body>
 <script src="./script2.js"></script>

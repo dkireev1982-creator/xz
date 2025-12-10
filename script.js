@@ -451,15 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-
-
-document.getElementById('exam-input').addEventListener('input', function(e) {
-    // Неправильная валидация, которая блокирует выбор
-    if (e.target.value !== 'ОГЭ' && e.target.value !== 'ЕГЭ') {
-        e.target.value = ''; // Сбрасывает значение
-    }
-});
+ 
 
 
 
@@ -474,8 +466,114 @@ document.getElementById('exam-input').addEventListener('input', function(e) {
 
 
 
-
-
-
-
-
+  const companyModal = document.getElementById('companyModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const enrollmentForm = document.getElementById('enrollmentForm');
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccessBtn = document.getElementById('closeSuccess');
+        
+        // Обработчик для всех кнопок с классом open-company-modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Открытие модального окна
+            document.querySelectorAll('.open-company-modal').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    companyModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Закрытие модального окна
+            closeModalBtn.addEventListener('click', closeModal);
+            
+            // Закрытие при клике на фон
+            companyModal.addEventListener('click', (e) => {
+                if (e.target === companyModal) {
+                    closeModal();
+                }
+            });
+            
+            // Закрытие при нажатии ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && companyModal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            // Обработка отправки формы
+            enrollmentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Валидация формы
+                const childName = document.getElementById('childName').value;
+                const parentPhone = document.getElementById('parentPhone').value;
+                const examType = document.querySelector('input[name="examType"]:checked');
+                const subject = document.getElementById('subject').value;
+                const grade = document.getElementById('grade').value;
+                const format = document.getElementById('format').value;
+                
+                if (!childName || !parentPhone || !examType || !subject || !grade || !format) {
+                    alert('Ваши данные успешно доставлены ');
+                    return;
+                }
+                
+                // Имитация отправки формы
+                console.log('Данные формы:', {
+                    childName,
+                    parentPhone,
+                    examType: examType.value,
+                    subject,
+                    grade,
+                    format
+                });
+                
+                // Показываем сообщение об успехе
+                enrollmentForm.style.display = 'none';
+                successMessage.style.display = 'flex';
+            });
+            
+            // Закрытие сообщения об успехе
+            closeSuccessBtn.addEventListener('click', () => {
+                closeModal();
+                // Сбрасываем форму и показываем её снова
+                enrollmentForm.reset();
+                enrollmentForm.style.display = 'flex';
+                successMessage.style.display = 'none';
+            });
+            
+            // Функция закрытия модального окна
+            function closeModal() {
+                companyModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Маска для номера телефона
+            document.getElementById('parentPhone').addEventListener('input', function(e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+            });
+            
+            // Валидация имени
+            document.getElementById('childName').addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^а-яА-ЯёЁ\s]/g, '');
+            });
+            
+            // Автоматический выбор класса при выборе ОГЭ/ЕГЭ
+            document.querySelectorAll('input[name="examType"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const gradeSelect = document.getElementById('grade');
+                    if (this.value === 'oge') {
+                        gradeSelect.innerHTML = `
+                            <option value="" disabled selected>Выберите класс</option>
+                            <option value="9">9 класс</option>
+                        `;
+                    } else if (this.value === 'ege') {
+                        gradeSelect.innerHTML = `
+                            <option value="" disabled selected>Выберите класс</option>
+                            <option value="10">10 класс</option>
+                            <option value="11">11 класс</option>
+                        `;
+                    }
+                });
+            });
+        });

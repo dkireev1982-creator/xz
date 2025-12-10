@@ -4719,3 +4719,478 @@ body {
         border-width: 1px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+.open-company-modal {
+            background: #7C3AED;
+            color: white;
+            border: none;
+            border-radius: 1.25rem;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0.625rem rgba(124, 58, 237, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .open-company-modal:hover {
+            background: #8B5CF6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+        }
+        
+        /* Модальное окно - МИНИМАЛИСТИЧНЫЙ ДИЗАЙН */
+        .company-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+        }
+        
+        .company-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        /* Модальное окно - УМЕНЬШЕНА ШИРИНА */
+        .modal-container {
+            width: 100%;
+            max-width: 480px; /* Уменьшенная ширина */
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            max-height: 85vh; /* Уменьшенная высота */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .company-modal.active .modal-container {
+            transform: translateY(0);
+        }
+        
+        /* Заголовок модального окна - МИНИМАЛИСТИЧНЫЙ */
+        .modal-header {
+            background: #fff;
+            padding: 1.5rem 2rem 1.25rem;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            text-align: center;
+        }
+        
+        .modal-header h2 {
+            font-size: 1.5rem; /* Уменьшен размер */
+            font-weight: 700;
+            color: #1E1B2E;
+            margin: 0;
+            line-height: 1.2;
+            padding-right: 2.5rem; /* Добавлено место для крестика */
+        }
+        
+        .modal-header h2 span {
+            color: #7C3AED;
+        }
+        
+        /* Крестик - СДЕЛАЛ ВИДИМЫМ */
+        .close-modal {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            background: rgba(124, 58, 237, 0.15);
+            border: 2px solid rgba(124, 58, 237, 0.3);
+            border-radius: 0.75rem;
+            color: #7C3AED;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            background: #7C3AED;
+            color: white;
+            border-color: #7C3AED;
+            transform: rotate(90deg);
+           
+        }
+
+       
+        
+        /* Тело модального окна - УМЕНЬШЕННЫЕ ОТСТУПЫ */
+        .modal-body {
+            padding: 1.5rem 2rem; /* Уменьшены отступы */
+            overflow-y: auto; /* Вернул скролл для маленьких экранов */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Форма - МИНИМАЛИСТИЧНЫЙ СТИЛЬ */
+        .enrollment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem; /* Уменьшен gap */
+            flex: 1;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            color: #1E1B2E;
+            font-size: 0.9rem; /* Уменьшен размер */
+            font-weight: 600;
+            display: block;
+        }
+        
+        .form-control {
+            padding: 0.875rem 1.125rem; /* Уменьшен padding */
+            border: 2px solid #f0f0f0;
+            border-radius: 0.875rem;
+            font-size: 0.95rem; /* Уменьшен размер шрифта */
+            font-weight: 500;
+            color: #1E1B2E;
+            transition: all 0.2s ease;
+            background: white;
+            width: 100%;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #7C3AED;
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237C3AED' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
+        }
+        
+        /* БОЛЬШИЕ РАДИО-КНОПКИ ДЛЯ ОГЭ/ЕГЭ */
+        .exam-type-group {
+            margin: 0.5rem 0;
+        }
+        
+        .exam-type-options {
+            display: flex;
+            gap: 0.75rem; /* Уменьшен gap */
+            margin-top: 0.5rem;
+        }
+        
+        .exam-option {
+            flex: 1;
+        }
+        
+        .exam-option input[type="radio"] {
+            display: none;
+        }
+        
+        .exam-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0.75rem; /* Уменьшен padding */
+            border: 2px solid #f0f0f0;
+            border-radius: 0.875rem;
+            background: white;
+            color: #4A5568;
+            font-weight: 700;
+            font-size: 1rem; /* Уменьшен размер */
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            height: 100%;
+            min-height: 3.5rem; /* Уменьшенная минимальная высота */
+        }
+        
+        .exam-option input[type="radio"]:checked + .exam-label {
+            border-color: #7C3AED;
+            background: #7C3AED;
+            color: white;
+        }
+        
+        .exam-label:hover {
+            border-color: #7C3AED;
+            transform: translateY(-1px);
+        }
+        
+        /* Кнопка отправки */
+        .submit-btn {
+            background: #7C3AED;
+            color: white;
+            border: none;
+            border-radius: 0.875rem;
+            padding: 1rem; /* Уменьшен padding */
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem; /* Уменьшен margin */
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #8B5CF6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+        }
+        
+        /* Успешное сообщение - СКРЫТОЕ ПО УМОЛЧАНИЮ */
+        .success-message {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem; /* Уменьшены отступы */
+            gap: 1.25rem;
+            flex: 1;
+        }
+        
+        .success-icon {
+            width: 70px; /* Уменьшен размер */
+            height: 70px;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem; /* Уменьшен размер */
+            color: #10B981;
+        }
+        
+        .success-message h3 {
+            font-size: 1.5rem; /* Уменьшен размер */
+            font-weight: 700;
+            color: #1E1B2E;
+            line-height: 1.2;
+            margin: 0;
+        }
+        
+        .success-message p {
+            color: #4A5568;
+            font-size: 0.95rem; /* Уменьшен размер */
+            max-width: 350px; /* Уменьшена ширина */
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .success-btn {
+            background: #7C3AED;
+            color: white;
+            border: none;
+            border-radius: 0.875rem;
+            padding: 0.875rem 1.75rem; /* Уменьшен padding */
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.75rem;
+        }
+        
+        .success-btn:hover {
+            background: #8B5CF6;
+            transform: translateY(-2px);
+        }
+        
+        /* Футер модального окна - УМЕНЬШЕН */
+        .modal-footer {
+            padding: 1rem 2rem; /* Уменьшен padding */
+            background: #f8f9fa;
+            border-top: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .modal-footer p {
+            color: #718096;
+            font-size: 0.7rem; /* Уменьшен размер */
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        /* ОТДЕЛЬНОЕ МОДАЛЬНОЕ ОКНО ДЛЯ УСПЕШНОЙ ОТПРАВКИ */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+        }
+        
+        .success-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .success-modal .modal-container {
+            max-width: 420px; /* Уменьшенная ширина */
+            max-height: auto;
+        }
+        
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 48rem) {
+            .modal-container {
+                max-width: 420px;
+                border-radius: 1.25rem;
+                max-height: 80vh;
+            }
+            
+            .modal-header {
+                padding: 1.25rem 1.5rem 1rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.3rem;
+                padding-right: 2rem;
+            }
+            
+            .modal-body {
+                padding: 1.25rem 1.5rem;
+            }
+            
+            .exam-type-options {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .exam-label {
+                padding: 1rem 0.5rem;
+                min-height: 3rem;
+            }
+            
+            .open-company-modal {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 30rem) {
+            body {
+                padding: 1.5rem;
+            }
+            
+            .modal-container {
+                max-width: 100%;
+                border-radius: 1rem;
+                max-height: 90vh;
+            }
+            
+            .modal-header {
+                padding: 1rem 1.25rem 0.875rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.2rem;
+                padding-right: 1.75rem;
+            }
+            
+            .modal-body {
+                padding: 1rem 1.25rem;
+            }
+            
+            .form-control {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .submit-btn {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+            
+            .close-modal {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .open-company-modal {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .enrollment-form {
+                gap: 1rem;
+            }
+            
+            .exam-label {
+                font-size: 0.95rem;
+                min-height: 2.75rem;
+            }
+        }
+        
+        @media (max-width: 22.5rem) {
+            .modal-body {
+                padding: 0.875rem 1rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .exam-label {
+                padding: 0.875rem 0.5rem;
+                font-size: 0.9rem;
+                min-height: 2.5rem;
+            }
+            
+            .success-message h3 {
+                font-size: 1.3rem;
+            }
+            
+            .open-company-modal {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.85rem;
+            }
+        }
