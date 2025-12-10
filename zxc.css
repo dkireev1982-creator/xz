@@ -5114,9 +5114,7 @@ body {
         }
         
         @media (max-width: 30rem) {
-            body {
-                padding: 1.5rem;
-            }
+           
             
             .modal-container {
                 max-width: 100%;
@@ -5171,9 +5169,7 @@ body {
         }
         
         @media (max-width: 22.5rem) {
-            .modal-body {
-                padding: 0.875rem 1rem;
-            }
+            
             
             .modal-header h2 {
                 font-size: 1.1rem;
